@@ -69,7 +69,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/icon.png',
     colorMode: {
       respectPrefersColorScheme: false,
     },
@@ -148,6 +147,9 @@ const config: Config = {
 
         // For Docs using Chinese, it is recomended to set:
         language: ["en"],
+
+        // Exclude translated files from search
+        ignoreFiles: [/Translated/],
 
         // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
         forceIgnoreNoIndex: true,
