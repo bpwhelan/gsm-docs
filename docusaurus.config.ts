@@ -88,6 +88,12 @@ const config: Config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
+          href: 'https://discord.gg/yP8Qse6bb8',
+          className: 'header-discord-link',
+          "aria-label": "Discord server",
+          position: 'left',
+        },
+        {
           href: 'https://github.com/bpwhelan/GameSentenceMiner',
           className: 'header-github-link',
           "aria-label": "GitHub repository",
