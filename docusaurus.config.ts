@@ -22,8 +22,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Beangate', // Usually your GitHub org/user name.
+  projectName: 'GameSentenceMiner', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -69,7 +69,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/icon.jpg',
+    image: 'img/icon.png',
     colorMode: {
       respectPrefersColorScheme: false,
     },
