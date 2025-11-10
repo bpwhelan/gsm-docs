@@ -64,9 +64,7 @@ Once you're set up, here's your typical mining session:
 
 After installation:
 
-- Explore [Guides](/docs/guides) for feature-specific help
 - Set up [AI Features](/docs/guides/ai-features) for automatic translations
-- Learn how to fix [Incomplete Sentences](/docs/guides/incomplete-sentences)
 - Check [Troubleshooting](/docs/troubleshooting) if you run into issues
 
 ## Community & Support

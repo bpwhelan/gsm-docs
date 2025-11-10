@@ -141,9 +141,7 @@ To verify everything is working:
 
 ## Next Steps
 
-- Check out the [Guides](/docs/guides) section for help with specific features
 - Learn how to use [AI Features](/docs/guides/ai-features) for automatic translations
-- Fix [Incomplete Sentences](/docs/guides/incomplete-sentences) in your Anki cards
 - Visit [Troubleshooting](/docs/troubleshooting) if you encounter any issues
 
 ## Getting Help
