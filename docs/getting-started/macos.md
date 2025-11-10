@@ -1,3 +1,9 @@
+---
+title: Installing GSM on macOS
+sidebar_label: macOS
+sidebar_position: 4
+---
+
 # GameSentenceMiner on macOS
 
 Welcome, Mac users! Thanks to the dedicated troubleshooting of our community members, we now have a working build of GameSentenceMiner for macOS.
