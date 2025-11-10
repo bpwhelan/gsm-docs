@@ -1,29 +1,39 @@
 ---
+title: What is GameSentenceMiner?
+sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# GSM - An Immersion toolkit for Games.
+# What is GameSentenceMiner?
 
-### English | [日本語](Translated/ja/README.md) | [简体中文](Translated/zh/README.md).
+<div align="left">
 
-An application designed to assist with language learning through games.
+[![Github All Releases](https://img.shields.io/github/downloads/bpwhelan/GameSentenceMiner/total.svg)](https://github.com/bpwhelan/GameSentenceMiner/releases)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/gamesentenceminer?label=pip)](https://pypi.org/project/gamesentenceminer/)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/bpwhelan)](https://github.com/sponsors/bpwhelan)
+[![Ko-Fi](https://img.shields.io/badge/donate-ko--fi-ed6760?label=donate)](https://ko-fi.com/beangate)
+[![GitHub License](https://img.shields.io/github/license/bpwhelan/GameSentenceMiner)](https://github.com/bpwhelan/GameSentenceMiner?tab=GPL-3.0-1-ov-file)
+[![Discord](https://img.shields.io/discord/1286409772383342664?color=%237785cc)](https://discord.gg/yP8Qse6bb8)
 
-Short Demo (Watch this first): https://www.youtube.com/watch?v=FeFBL7py6HY
+</div>
 
-Installation: https://www.youtube.com/watch?v=sVL9omRbGc4
+**English** | [日本語](Translated/ja/README.md) | [简体中文](Translated/zh/README.md)
 
-Discord: https://discord.gg/yP8Qse6bb8
+GameSentenceMiner is a powerful application designed to supercharge your language learning through video games and visual novels. By automatically capturing context-rich materials from your gaming sessions, GSM transforms every game into an immersive language learning experience.
 
-## Features - [Anki Card Enhancement](#anki-card-enhancement) | [OCR](#ocr) | [Overlay](#overlay) | [Stats](#stats)
+:::tip Quick Links
+- **Short Demo**: [Watch this first](https://www.youtube.com/watch?v=FeFBL7py6HY)
+- **Installation Guide**: [Full video tutorial](https://www.youtube.com/watch?v=sVL9omRbGc4)
+- **Discord Community**: [Join us](https://discord.gg/yP8Qse6bb8)
+:::
+
+## Core Features
 
 ### Anki Card Enhancement
 
 GSM significantly enhances your Anki cards with rich contextual information:
 
-* **Automated Audio Capture**: Automatically records the voice line associated with the text.
-
-  * **Automatic Trim**: Some simple math around the time that the text event came in, in combination with a "Voice Activation Detection" (VAD) library gives us neatly cut audio.
-  * **Manual Trim**: If Automatic voiceline trim is not perfect, it's possible to [open the audio in an external program](https://youtu.be/LKFQFy2Qm64) for trimming.
+* **Voice Audio**: Automatically records the voice line associated with the text.
 
 * **Screenshot**: Captures a screenshot of the game at the moment the voice line is spoken.
 
@@ -131,33 +141,36 @@ These statistics aren't just meant to look pretty, they are meant to help you an
 
 ## Basic Requirements
 
-* **Anki card creation tool**: [Yomitan](https://github.com/yomidevs/yomitan), [JL](https://github.com/rampaa/JL), etc.
+To get started with GSM, you'll need:
 
-* **A method of getting text from the game**: [Agent](https://github.com/0xDC00/agent), [Textractor](https://github.com/Artikash/Textractor), [LunaTranslator](https://github.com/HIllya51/LunaTranslator), GSM's OCR, etc.
+* **An Anki card creation tool**: [Yomitan](https://github.com/yomidevs/yomitan) (recommended), [JL](https://github.com/rampaa/JL), etc.
+* **A text extraction method**: [Agent](https://github.com/0xDC00/agent), [Textractor](https://github.com/Artikash/Textractor), [LunaTranslator](https://github.com/HIllya51/LunaTranslator), or GSM's built-in OCR
+* **A game** in your target language
+* **OBS Studio** - For audio and screenshot capture
+* **Anki** - For creating and reviewing flashcards
 
-* **A game :)**
+## Getting Started
 
-## Documentation
+Ready to begin? Head over to our [Getting Started Guide](/docs/getting-started) for detailed installation instructions for your platform.
 
-For help with installation, setup, and other information, please visit the project's [Wiki](https://github.com/bpwhelan/GameSentenceMiner/wiki).
+## How GSM Works
 
-## FAQ
+GSM works by coordinating multiple tools to create rich, context-aware flashcards:
 
-### How Does It Work?
+1. **Text Event Detection**: A texthooker (Agent, Textractor, OCR) captures text from your game, marking the beginning of a voice line
+2. **Audio Capture**: GSM uses Voice Activity Detection (VAD) to automatically detect when speech begins and ends
+3. **Screenshot Capture**: At the moment of the text event, GSM saves a screenshot from OBS
+4. **Card Enhancement**: When you create an Anki card via Yomitan, GSM automatically adds the audio clip and screenshot
 
-This is a common question, and understanding this process will help clarify any issues you might encounter while using GSM.
+This process relies on accurately timed text events to capture corresponding audio. GSM provides extensive settings to accommodate various games and text sources, ensuring consistent results across different setups.
 
-1.  The beginning of the voice line is marked by a text event. This usually comes from Textractor, Agent, or another texthooker. GSM can listen for a clipboard copy and/or a WebSocket server (configurable in GSM).
+## Support & Community
 
-2.  The end of the voice line is detected using a Voice Activity Detection (VAD) library running locally. ([Example](https://github.com/snakers4/silero-vad))
+If you encounter issues or have questions:
 
-In essence, GSM relies on accurately timed text events to capture the corresponding audio.
-
-GSM provides settings to accommodate less-than-ideal hooks. However, if you experience significant audio inconsistencies, they likely stem from a poorly timed hook, loud background music, or other external factors, rather than GSM itself. The core audio trimming logic has been stable and effective for many users across various games.
-
-## Contact
-
-If you encounter issues, please ask for help in my [Discord](https://discord.gg/yP8Qse6bb8) or create an issue here.
+* **Join our [Discord server](https://discord.gg/yP8Qse6bb8)** for real-time help
+* **Check the [Troubleshooting Guide](/docs/troubleshooting)** for common issues
+* **Open an issue on [GitHub](https://github.com/bpwhelan/GameSentenceMiner/issues)** for bug reports
 
 ## Acknowledgements
 

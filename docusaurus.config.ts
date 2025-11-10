@@ -41,22 +41,17 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/bpwhelan/gsm-docs/tree/main/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
+            editUrl:
+            'https://github.com/bpwhelan/gsm-docs/edit/main/',
+          },
+          blog: {
+            showReadingTime: true,
+            feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/bpwhelan/gsm-docs/tree/main/',
-          // Useful options to enforce blogging best practices
+            },
+            editUrl:
+            'https://github.com/bpwhelan/gsm-docs/edit/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -109,7 +104,7 @@ const config: Config = {
           items: [
             {
               label: 'Guide',
-              to: '/docs/intro',
+              to: '/docs/Overview',
             },
           ],
         },
