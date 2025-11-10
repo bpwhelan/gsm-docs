@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # What is GameSentenceMiner?
 
-<div align="left">
+<!-- <div align="left">
 
 [![Github All Releases](https://img.shields.io/github/downloads/bpwhelan/GameSentenceMiner/total.svg)](https://github.com/bpwhelan/GameSentenceMiner/releases)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/gamesentenceminer?label=pip)](https://pypi.org/project/gamesentenceminer/)
@@ -15,7 +15,7 @@ sidebar_position: 1
 [![GitHub License](https://img.shields.io/github/license/bpwhelan/GameSentenceMiner)](https://github.com/bpwhelan/GameSentenceMiner?tab=GPL-3.0-1-ov-file)
 [![Discord](https://img.shields.io/discord/1286409772383342664?color=%237785cc)](https://discord.gg/yP8Qse6bb8)
 
-</div>
+</div> -->
 
 **English** | [日本語](Translated/ja/README.md) | [简体中文](Translated/zh/README.md)
 
