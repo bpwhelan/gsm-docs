@@ -27,9 +27,10 @@ Before installing GSM, you'll need to have the following software installed:
 ### Optional but Recommended
 
 - **A Texthooker** - For extracting text from games
-  - [Agent](https://github.com/0xDC00/agent) - Recommended for modern games
-  - [Textractor](https://github.com/Artikash/Textractor) - Works with older games
-  - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - All-in-one solution
+  - [Agent](https://github.com/0xDC00/agent) - Recommended if the game has a script.
+  - [Textractor](https://github.com/Artikash/Textractor) - Works with older games/VNs
+  - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - Multi-purpose, highly customizable tool that can work just like textractor, but comes with a lot of virus false-positives. Use at your own risk.
+  - [LunaHook](https://github.com/AuroraWright/LunaTranslator/releases/tag/LunaHook) - LunaTranslator with a lot of the fluff cut out. 
 
 ## Installation
 
