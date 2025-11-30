@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'troubleshooting',
+    'settings',
     {
       type: 'category',
       label: 'Translations',

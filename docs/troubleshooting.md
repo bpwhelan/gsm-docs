@@ -59,20 +59,16 @@ This is often caused by a corrupted update or a conflict with other software.
     -   **Solution 2:** Close all Razer software before starting GSM.
 -   **Corrupted Update**: You may see errors like `module 'psutil' has no attribute 'NoSuchProcess'` or `cannot import name 'Image' from 'PIL'`.
     -   **Solution**: Follow the **Repair Python Environment** steps above.
--   **Python Environment Variables**: If you have `PYTHONPATH` set as a system environment variable, it can conflict with GSM's internal Python environment.
-    -   **Solution**: Remove the `PYTHONPATH` system environment variable and restart your PC. GSM uses a self-contained Python installation and does not require this.
--   **Unsupported Locale (JP Locale)**: An error `unsupported locale setting` related to `ttkbootstrap` can occur if your Windows date/time format is set to Japanese.
-    -   **Solution**: Change your system's regional format to `English (World)` or another supported format. This is a known issue with a dependency library.
 
 ### I can't find where to install GSM. It only installs on my C: drive.
 
-This is the current behavior. The installation path for GSM is not currently customizable. User data, OBS, and Python packages are stored in `%AppData%\GameSentenceMiner`.
+The installation path for GSM is not currently customizable. User data, OBS, and Python packages are stored in `%AppData%\GameSentenceMiner`.
 
 ## OBS & Media (Audio/Screenshots)
 
 ### OBS Shows a Black Screen for My Game
 
-This is a common OBS issue, especially with games that have aggressive anti-cheat or run in exclusive fullscreen.
+This is a common OBS issue, especially with games that have aggressive anti-cheat or run in exclusive fullscreen. See a full list [here](https://obsproject.com/kb/game-capture-troubleshooting).
 
 -   **Run as Administrator**: Many games (especially Hoyoverse titles like Genshin Impact) require OBS to be run with administrator privileges to be captured. The easiest way to do this is to run GSM itself as an administrator.
 -   **Change Capture Method**: In the OBS window, double-click your game source. Change the `Capture Method` from `Automatic` to `Windows 10 (1903 and up)`.
