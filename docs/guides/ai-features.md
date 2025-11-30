@@ -43,6 +43,8 @@ Groq Studio provides an easy-to-use LLM service with competitive pricing.
 
 You can use any OpenAI-compatible API endpoint, including OpenAI itself, OpenRouter, or local LLMs.
 
+For OpenAI, you may be able to get free tokens by opting in to sharing your API inputs/outputs at Data Controls -> Sharing -> Share inputs and outputs with OpenAI. I personally have used millions of tokens and haven't been charged a dime.
+
 1.  Obtain your API key from your chosen service.
 2.  Paste it into the `OpenAI API Key` field.
 3.  Set the `OpenAI API URL`. This should be the base URL of the API.
