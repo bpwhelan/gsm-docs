@@ -22,7 +22,7 @@ You must install several dependencies using your distribution's package manager.
 
 ```sh
 sudo apt update
-sudo apt install ffmpeg python3-venv python3-pip python3-tk libfuse2 xclip
+sudo apt install ffmpeg python3-venv python3-pip libfuse2 xclip
 ```
 
 #### For Fedora / Nobara / Arch-based Distributions:
@@ -30,7 +30,7 @@ sudo apt install ffmpeg python3-venv python3-pip python3-tk libfuse2 xclip
 Package names may vary. These are common names for Fedora.
 
 ```sh
-sudo dnf install ffmpeg python3-tkinter python3-devel gcc libevdev-devel xclip
+sudo dnf install ffmpeg python3-devel gcc libevdev-devel xclip
 ```
 *(Note: Arch users may need to find equivalent packages in the official repositories or the AUR.)*
 
@@ -42,7 +42,7 @@ sudo dnf install ffmpeg python3-tkinter python3-devel gcc libevdev-devel xclip
 NEEDS VERIFICATION:
 
 ```sh
-sudo pacman -S ffmpeg python-tk gcc libevdev xclip fuse2
+sudo pacman -S ffmpeg gcc libevdev xclip fuse2
 ```
 
 ## 2. OBS Studio Configuration
