@@ -19,11 +19,14 @@ All AI configuration is handled in the **AI** tab within GSM's settings. You mus
 <Tabs>
 <TabItem value="gemini" label="Google Gemini" default>
 
-Google's Gemini API offers a generous free tier, making it an excellent choice for getting started.
+Google's Gemini recenly underwent a massive downgrade in free tier availability. But some models like gemma-3-27b are still generously supported in free tier, and are good enough for translations.
 
 1.  Go to **[Google AI Studio](https://aistudio.google.com/app/apikey)** and sign in with your Google account.
 2.  Click **Create API Key** and copy the generated key.
 3.  Paste this key into the `Gemini API Key` field in GSM's AI settings.
+
+Recommendations:
+Honestly, gemma3-27b is the only one worth using right now in terms of free tier. I will update this doc if that changes in the future.
 
 :::note
 Gemini's free tier has regional availability. Check the [official documentation](https://ai.google.dev/gemini-api/docs/available-regions) to see if your region is supported.
@@ -31,19 +34,24 @@ Gemini's free tier has regional availability. Check the [official documentation]
 
 </TabItem>
 
-<TabItem value="groq" label="Groq Studio">
-Groq Studio provides an easy-to-use LLM service with competitive pricing.
+<TabItem value="groq" label="Groq">
+Groq provides an easy-to-use LLM service with competitive pricing.
 
-1.  Go to **[Groq Studio](https://groq.studio)** and sign in or create an account.
+1.  Go to **[Groq](https://console.groq.com/)** and sign in or create an account.
 2.  Navigate to the API section and generate a new API key.
 3.  Paste this key into the `Groq API Key` field in GSM's AI settings.
+
+Recommendations:
+
+- meta-llama/llama-4-maverick-17b-128e-instruct: 1000 requests per day, very accurate.
+- llama-3.1-8b-instant: 14000 requests per day, fast, and still probably good enough for most translations.
 
 </TabItem>
 <TabItem value="openai" label="OpenAI / OpenRouter">
 
 You can use any OpenAI-compatible API endpoint, including OpenAI itself, OpenRouter, or local LLMs.
 
-For OpenAI, you may be able to get free tokens by opting in to sharing your API inputs/outputs at Data Controls -> Sharing -> Share inputs and outputs with OpenAI. I personally have used millions of tokens and haven't been charged a dime.
+For OpenAI, you may be able to get free tokens by opting in to sharing your API inputs/outputs at Data Controls -> Sharing -> Share inputs and outputs with OpenAI. I personally have used millions of tokens and haven't been charged a dime. You may have to put in 5 dollars to unlock tier 1 before this becomes available though.
 
 1.  Obtain your API key from your chosen service.
 2.  Paste it into the `OpenAI API Key` field.
@@ -54,7 +62,7 @@ For OpenAI, you may be able to get free tokens by opting in to sharing your API 
 </TabItem>
 <TabItem value="local" label="Local LLMs (LM Studio, etc.)">
 
-For privacy or offline use, you can run an OpenAI-compatible server locally. This requires a separate setup using a tool like LM Studio, Jan, or KoboldCpp.
+For privacy or offline use, you can run an OpenAI-compatible server locally. This requires a separate setup using a tool like LM Studio (Which I recommend), Ollama, Jan, or KoboldCpp.
 
 1.  In GSM's AI settings, set the `OpenAI API URL` to your local server's address (e.g., `http://localhost:1234/v1`).
 2.  Set the `OpenAI API Key` to any non-empty value (e.g., `lm-studio`).
