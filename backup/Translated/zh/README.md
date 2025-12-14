@@ -1,6 +1,6 @@
 # GSM - 游戏沉浸工具包
 
-### [English](../../overview.md) | [日本語](../ja/README.md) | 简体中文
+<!-- ### [English](../../overview.md) | [日本語](../ja/README.md) | 简体中文 -->
 
 一款旨在通过游戏辅助语言学习的应用程序。
 

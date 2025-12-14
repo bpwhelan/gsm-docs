@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'GameSentenceMiner Official Documentation',
+  title: 'GameSentenceMiner Documentation',
   tagline: 'Game your way to language fluency',
   favicon: 'img/favicon.ico',
 
@@ -32,7 +32,12 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja'],
+    // localeConfigs: {
+    //   ['en']: {
+    //     translate: true,
+    //   },
+    // },
   },
 
   presets: [
@@ -94,6 +99,10 @@ const config: Config = {
           "aria-label": "GitHub repository",
           position: 'right',
         },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        }
       ],
     },
     footer: {
@@ -148,7 +157,7 @@ const config: Config = {
         hashed: true,
 
         // For Docs using Chinese, it is recomended to set:
-        language: ["en"],
+        language: ["en", "ja"],
 
         // Exclude translated files from search
         ignoreFiles: [/Translated/],

@@ -17,8 +17,6 @@ sidebar_position: 1
 
 </div> -->
 
-**English** | [日本語](Translated/ja/README.md) | [简体中文](Translated/zh/README.md)
-
 GameSentenceMiner is a powerful application designed to supercharge your language learning through video games and visual novels. By automatically capturing context-rich materials from your gaming sessions, GSM transforms every game into an immersive language learning experience.
 
 :::tip Quick Links

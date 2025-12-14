@@ -34,23 +34,6 @@ const sidebars: SidebarsConfig = {
     },
     'troubleshooting',
     'settings',
-    {
-      type: 'category',
-      label: 'Translations',
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          id: 'Translated/ja/README',
-          label: '日本語',
-        },
-        {
-          type: 'doc',
-          id: 'Translated/zh/README',
-          label: '简体中文',
-        },
-      ],
-    },
   ],
 };
 
