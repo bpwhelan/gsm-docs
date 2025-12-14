@@ -22,7 +22,7 @@ Linuxのサポートは進行中の作業です。OCRやAnki連携などのコ�
 
 ```sh
 sudo apt update
-sudo apt install ffmpeg python3-venv python3-pip python3-tk libfuse2 xclip
+sudo apt install ffmpeg python3-venv python3-pip libfuse2 xclip
 ```
 
 #### Fedora / Nobara / Archベースのディストリビューションの場合：
@@ -30,7 +30,7 @@ sudo apt install ffmpeg python3-venv python3-pip python3-tk libfuse2 xclip
 パッケージ名は異なる場合があります。これらはFedoraの一般的な名前です。
 
 ```sh
-sudo dnf install ffmpeg python3-tkinter python3-devel gcc libevdev-devel xclip
+sudo dnf install ffmpeg python3-devel gcc libevdev-devel xclip
 ```
 *（注：Archユーザーは、公式リポジトリまたはAURで同等のパッケージを見つける必要がある場合があります。）*
 
@@ -42,7 +42,7 @@ sudo dnf install ffmpeg python3-tkinter python3-devel gcc libevdev-devel xclip
 検証が必要です：
 
 ```sh
-sudo pacman -S ffmpeg python-tk gcc libevdev xclip fuse2
+sudo pacman -S ffmpeg gcc libevdev xclip fuse2
 ```
 
 ## 2. OBS Studioの設定

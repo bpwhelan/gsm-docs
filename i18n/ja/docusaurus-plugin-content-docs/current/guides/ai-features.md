@@ -19,11 +19,14 @@ GSMは、大規模言語モデル（LLM）を活用して、マイニングし�
 <Tabs>
 <TabItem value="gemini" label="Google Gemini" default>
 
-GoogleのGemini APIは、豊富な無料枠を提供しており、始めるのに最適な選択肢です。
+GoogleのGeminiは最近、無料枠の提供が大幅に縮小されました。しかし、gemma-3-27bのような一部のモデルは、まだ無料枠で手厚くサポートされており、翻訳には十分な性能です。
 
 1.  **[Google AI Studio](https://aistudio.google.com/app/apikey)**にアクセスし、Googleアカウントでサインインします。
 2.  **APIキーを作成**をクリックし、生成されたキーをコピーします。
 3.  このキーをGSMのAI設定の`Gemini APIキー`フィールドに貼り付けます。
+
+推奨事項:
+正直なところ、無料枠の観点では現在gemma3-27bが唯一使用する価値のあるモデルです。将来的に変更があれば、このドキュメントを更新します。
 
 :::note
 Geminiの無料枠は地域によって利用可能性が異なります。[公式ドキュメント](https://ai.google.dev/gemini-api/docs/available-regions)で、お住まいの地域がサポートされているか確認してください。
@@ -31,19 +34,24 @@ Geminiの無料枠は地域によって利用可能性が異なります。[公�
 
 </TabItem>
 
-<TabItem value="groq" label="Groq Studio">
-Groq Studioは、使いやすいLLMサービスを競争力のある価格で提供しています。
+<TabItem value="groq" label="Groq">
+Groqは、使いやすいLLMサービスを競争力のある価格で提供しています。
 
-1.  **[Groq Studio](https://groq.studio)**にアクセスし、サインインまたはアカウントを作成します。
+1.  **[Groq](https://console.groq.com/)**にアクセスし、サインインまたはアカウントを作成します。
 2.  APIセクションに移動し、新しいAPIキーを生成します。
 3.  このキーをGSMのAI設定の`Groq APIキー`フィールドに貼り付けます。
+
+推奨事項:
+
+- meta-llama/llama-4-maverick-17b-128e-instruct: 1日1000リクエスト、非常に正確です。
+- llama-3.1-8b-instant: 1日14000リクエスト、高速で、ほとんどの翻訳にはおそらく十分です。
 
 </TabItem>
 <TabItem value="openai" label="OpenAI / OpenRouter">
 
 OpenAI自体、OpenRouter、またはローカルLLMなど、任意のOpenAI互換APIエンドポイントを使用できます。
 
-OpenAIの場合、データ管理 -> 共有 -> OpenAIとAPIの入力/出力を共有する、にオプトインすることで無料トークンを取得できる場合があります。私は個人的に数百万トークンを使用しましたが、一銭も請求されていません。
+OpenAIの場合、データ管理 -> 共有 -> OpenAIとAPIの入力/出力を共有する、にオプトインすることで無料トークンを取得できる場合があります。私は個人的に数百万トークンを使用しましたが、一銭も請求されていません。ただし、これが利用可能になる前に、ティア1をアンロックするために5ドルを入金する必要があるかもしれません。
 
 1.  選択したサービスからAPIキーを取得します。
 2.  それを`OpenAI APIキー`フィールドに貼り付けます。
@@ -54,7 +62,7 @@ OpenAIの場合、データ管理 -> 共有 -> OpenAIとAPIの入力/出力を�
 </TabItem>
 <TabItem value="local" label="ローカルLLM（LM Studioなど）">
 
-プライバシーやオフラインでの使用のために、ローカルでOpenAI互換サーバーを実行できます。これには、LM Studio、Jan、KoboldCppなどのツールを使用した個別のセットアップが必要です。
+プライバシーやオフラインでの使用のために、ローカルでOpenAI互換サーバーを実行できます。これには、LM Studio（推奨）、Ollama、Jan、KoboldCppなどのツールを使用した個別のセットアップが必要です。
 
 1.  GSMのAI設定で、`OpenAI API URL`をローカルサーバーのアドレス（例：`http://localhost:1234/v1`）に設定します。
 2.  `OpenAI APIキー`を空でない任意の値（例：`lm-studio`）に設定します。

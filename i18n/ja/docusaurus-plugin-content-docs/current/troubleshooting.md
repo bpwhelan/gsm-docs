@@ -1,6 +1,6 @@
 ---
 title: トラブルシューティングとFAQ
-sidebar_label: トラブルシューティング
+sidebar_label: よくある問題
 sidebar_position: 3
 ---
 
@@ -11,42 +11,9 @@ import TabItem from '@theme/TabItem';
 
 このページでは、GameSentenceMiner（GSM）の使用中に遭遇する頻繁な質問と一般的な問題について説明します。
 
-## 一般的なトラブルシューティング
-
-特定の問題に入る前に、まずこれらの一般的な解決策を試してみてください。多くの問題は、簡単な再起動や環境のリフレッシュで解決できます。
-
-<Tabs>
-<TabItem value="restart" label="GSMの再起動" default>
-
-特に接続（OBS、Anki）やUI要素が表示されないなど、多くの一時的な問題は、GSMを完全に再起動することで解決できます。
-
-1.  システムトレイにあるGSMのつるはしアイコンを右クリックします。
-2.  **終了**を選択します。
-3.  GSMを再起動します。
-
-トレイアイコンが見つからない場合は、タスクマネージャーで`GameSentenceMiner.exe`と`python.exe`のプロセスを終了させる必要があるかもしれません。
-
-</TabItem>
-<TabItem value="repair" label="Python環境の修復">
-
-アップデート後にGSMが起動しない場合や、不足しているモジュール（`psutil`、`torchaudio`、`PIL`、`pysbd`）に関するエラーが発生した場合、Python環境が破損している可能性があります。
-
-1.  GSMを完全に終了します。
-2.  Windows PowerShellまたはコマンドプロンプトを開きます。
-3.  次のコマンドを1つずつ実行します：
-
-    ```powershell
-    # このコマンドはパッケージキャッシュをクリーンアップし、いくつかのアップデート問題を解決できます。
-    ~/AppData/Roaming/GameSentenceMiner/python/python.exe -m uv cache clean
-
-    # このコマンドはGSM Pythonパッケージの最新バージョンへの強制アップグレードを行います。
-    ~/AppData/Roaming/GameSentenceMiner/python/python.exe -m uv pip install --upgrade gamesentenceminer
-    ```
-
-4.  GSMを再起動します。最も深刻な場合には、`~/AppData/Roaming/GameSentenceMiner/`内の`python`フォルダを削除し、次回の起動時にGSMに再インストールさせる必要があるかもしれません。
-
-</TabItem>
-</Tabs>
+:::tip
+多くの問題は、GSMとOBS Studioを再起動するだけで解決します。問題が発生したらまずこれを試してください。PCの再起動も役立つ場合があります。GSMは個人プロジェクトなので、対応に時間がかかることがあります。
+:::
 
 ## インストールと起動
 

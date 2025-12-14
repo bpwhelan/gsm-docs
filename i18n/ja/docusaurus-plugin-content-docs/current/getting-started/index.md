@@ -8,33 +8,32 @@ sidebar_position: 1
 
 GameSentenceMiner（GSM）へようこそ！このガイドは、迅速にセットアップを完了し、利用を開始するのに役立ちます。
 
-## プラットフォームを選択
+## クイックスタートビデオ
 
-GSMは複数のオペレーティングシステムで利用可能です。特定のインストール手順については、以下のプラットフォームを選択してください：
+以下のインストールチュートリアルを参照すると、セットアップ手順を実際に確認できます：
 
-- **[Windows](/docs/getting-started/windows)** - 全機能サポート、推奨プラットフォーム
-- **[macOS](/docs/getting-started/macos)** - 実験的サポート、コア機能は動作
-- **[Linux](/docs/getting-started/linux)** - 実験的サポート、コミュニティによるメンテナンス
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/sVL9omRbGc4" title="GSM Installation Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 必要なもの
 
 プラットフォームに関わらず、以下のものが必要です：
 
-1. **ゲーム** - プレイして学ぶためのもの
-2. **Anki** - フラッシュカードの作成と復習用
-3. **OBS Studio** - ゲームの映像と音声のキャプチャ用
-4. **Yomitan**（ブラウザ拡張機能） - テキストからカードを作成するため
-5. **テキストフッカー**（オプションですが推奨）
-   - [Agent](https://github.com/0xDC00/agent)
-   - [Textractor](https://github.com/Artikash/Textractor)
-   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator)
-   - またはGSMの内蔵OCRを使用
+1. **ゲーム** をプレイするためのゲーム
+2. **Yomitan（ブラウザ拡張）** - テキストからカードを作成します。インストール手順は次を参照してください: [Yomitan Getting Started](https://yomitan.wiki/getting-started/)
+3. **[Anki](https://apps.ankiweb.net/)** - フラッシュカードの作成と復習に使用します。Yomitanのテンプレートや設定については、`yomitan-anki.md`を参照してください。
+4. **GSMへテキストを取り込む方法**（いずれか）
+   - [Agent](https://github.com/0xDC00/agent) - [Video Tutorial](https://www.youtube.com/watch?v=fMWJYr_PcRE)
+   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - [Video Tutorial](https://www.youtube.com/watch?v=ysZBI2tcxMc)
+   - [Textractor](https://github.com/Artikash/Textractor) - [Video Tutorial](https://www.youtube.com/watch?v=sEIYGTEuciA)
+   - GSMの組み込みOCR
 
-## クイックスタートビデオ
+## GSMのインストール（簡易）
 
-このインストールチュートリアルを見て、セットアッププロセスを実際に確認してください：
+GSMは複数のオペレーティングシステムで利用できます。特定のインストール手順については、プラットフォーム別のページを参照してください：
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sVL9omRbGc4" title="GSM Installation Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- **[Windows](/docs/getting-started/windows)** - 全機能サポート、推奨プラットフォーム
+- **[macOS](/docs/getting-started/macos)** - 実験的サポート
+- **[Linux](/docs/getting-started/linux)** - 実験的サポート
 
 ## GSMの仕組み
 

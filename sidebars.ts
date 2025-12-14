@@ -19,6 +19,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'getting-started/index',
+        'getting-started/yomitan-anki',
         'getting-started/windows',
         'getting-started/linux',
         'getting-started/macos',

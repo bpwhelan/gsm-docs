@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting & FAQ
-sidebar_label: Troubleshooting
+sidebar_label: Common Problems
 sidebar_position: 3
 ---
 
@@ -11,44 +11,9 @@ import TabItem from '@theme/TabItem';
 
 This page covers frequently asked questions and common issues encountered while using GameSentenceMiner (GSM).
 
-## General Troubleshooting
-
-Before diving into specific issues, try these common solutions first. Many problems can be resolved with a simple restart or environment refresh.
-
-<Tabs>
-<TabItem value="restart" label="Restart GSM" default>
-
-Many transient issues, especially those related to connections (OBS, Anki) or UI elements not appearing, can be fixed by completely restarting GSM.
-
-1.  Right-click the GSM pickaxe icon in your system tray.
-2.  Select **Quit**.
-3.  Relaunch GSM.
-
-If you can't find the tray icon, you may need to end the `GameSentenceMiner.exe` and `python.exe` processes in your Task Manager.
-
-</TabItem>
-<TabItem value="repair" label="Repair Python Environment">
-
-If GSM fails to start after an update, or you encounter errors mentioning missing modules (`psutil`, `torchaudio`, `PIL`, `pysbd`), the Python environment may be corrupted.
-
-1.  Close GSM completely.
-2.  Open Windows PowerShell or Command Prompt.
-3.  Run the following commands one by one:
-
-    ```powershell
-    # This command cleans the package cache, which can resolve some update issues.
-    ~/AppData/Roaming/GameSentenceMiner/python/python.exe -m uv cache clean
-
-    # This command forces an upgrade to the latest version of the GSM Python package.
-    ~/AppData/Roaming/GameSentenceMiner/python/python.exe -m uv pip install --upgrade gamesentenceminer
-    ```
-
-4.  Restart GSM. In the most severe cases, you may need to delete the `python` folder inside `~/AppData/Roaming/GameSentenceMiner/` and let GSM reinstall it on the next launch.
-
-</TabItem>
-</Tabs>
-
-## Installation & Startup
+:::tip
+Many problems can be resolved by simply restarting GSM and OBS Studio. If you encounter an issue, try this first! Restarting PC can also help with stubborn issues. This is largely a 1 man project, so please be patient with me and GSM.
+:::
 
 ### GSM Crashes or Fails to Initialize on Startup
 
@@ -63,8 +28,6 @@ This is often caused by a corrupted update or a conflict with other software.
 ### I can't find where to install GSM. It only installs on my C: drive.
 
 The installation path for GSM is not currently customizable. User data, OBS, and Python packages are stored in `%AppData%\GameSentenceMiner`.
-
-## OBS & Media (Audio/Screenshots)
 
 ### OBS Shows a Black Screen for My Game
 
@@ -95,8 +58,6 @@ This is often a Voice Activity Detection (VAD) issue, where the model struggles 
 -   **Double Audio / Echo**: This happens when OBS is capturing both the specific game's audio and your general "Desktop Audio."
     -   **Solution**: In the OBS window's "Audio Mixer" panel, mute the "Desktop Audio" track.
 
-## OCR (Text Recognition)
-
 ### OCR Isn't Working or Fails to Start
 
 -   **"Unrecognized arguments" Error**: This happens when your GSM desktop app version and Python package version are out of sync.
@@ -116,8 +77,6 @@ This is often a Voice Activity Detection (VAD) issue, where the model struggles 
 -   **Text is Split or Duplicated**: This often happens with pixelated text (e.g., from DS games) or fast scan rates.
     -   **Solution**: Try increasing the **OCR Scan Rate** to a higher number (e.g., `0.8` or `1.0`) to give the screen more time to settle. Disabling **Optimize 2nd Scan** can also sometimes help at the cost of slower performance.
 
-## Overlay
-
 ### The Overlay Doesn't Appear or Update
 
 -   **It's Not Automatic (by default)**: The overlay's OCR scan is triggered by a new text event from a source like Agent, Textractor, or GSM's own OCR. It doesn't scan constantly unless you enable **Periodic Capture**.
@@ -126,8 +85,6 @@ This is often a Voice Activity Detection (VAD) issue, where the model struggles 
     -   **Solution**: Use the **Scan Delay** or **Extra Local Scans per Event** options in the `Overlay` settings to give the text time to fully appear before the final scan.
 -   **Focus Issues**: Some games in exclusive fullscreen may "trap" the mouse, preventing you from interacting with the overlay.
     -   **Solution**: Enable **Manual Mode (Hotkey)**. This allows you to press and hold a key to activate the overlay for lookups, then release it to return focus to the game.
-
-## Integrations (Yomitan, Migaku, Anki)
 
 ### My Anki Card Only Has Part of the Sentence
 
