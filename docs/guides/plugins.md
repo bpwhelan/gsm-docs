@@ -1,3 +1,11 @@
+---
+title: GSM Plugin System
+sidebar_label: Plugins
+sidebar_position: 3
+---
+
+import Admonition from '@theme/Admonition';
+
 # User Plugins System
 
 The User Plugins system allows you to customise GameSentenceMiner's behavior by writing Python code that runs automatically every 15 minutes.
