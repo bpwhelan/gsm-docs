@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'guides/ai-features',
         'guides/incomplete-sentences',
+        'guides/plugins'
       ],
     },
     'troubleshooting',
