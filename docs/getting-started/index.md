@@ -22,10 +22,12 @@ Regardless of your platform, you'll need:
 2. **Yomitan (Browser Extension)** for creating cards from text. Take a look here for installation instructions: [Yomitan Getting Started](https://yomitan.wiki/getting-started/)
 3. **[Anki](https://apps.ankiweb.net/)** for creating and reviewing flashcards. Take a look here for some Templates and how to set them up in Yomitan: [Yomitan Anki Templates](./yomitan-anki.md)
 4. **A way to get text into GSM**
-   - [Agent](https://github.com/0xDC00/agent) - [Video Tutorial](https://www.youtube.com/watch?v=fMWJYr_PcRE)
-   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - [Video Tutorial](https://www.youtube.com/watch?v=ysZBI2tcxMc)
-   - [Textractor](https://github.com/Artikash/Textractor) - [Video Tutorial](https://www.youtube.com/watch?v=sEIYGTEuciA)
-   - GSM's built-in OCR
+   - [Agent](https://github.com/0xDC00/agent) - [Video Tutorial](https://www.youtube.com/watch?v=fMWJYr_PcRE) - Games/Emulators - List of Supported Games: https://github.com/0xDC00/scripts
+   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - [Video Tutorial](https://www.youtube.com/watch?v=ysZBI2tcxMc) - VNs/Emulators - I use this for VNs rather than textractor, but that's not a recommendation.
+   - [Textractor](https://github.com/Chenx221/Textractor) - [Video Tutorial](https://www.youtube.com/watch?v=sEIYGTEuciA) - VNs
+   - GSM's built-in OCR - Universal Solution
+   - My recommendation for conventional games is to check Agent for a script, and if it doesn't have one, use GSM's OCR.
+   - For VNs, try LunaTranslator/Textractor before trying OCR.
 
 
 ## Installing GSM
