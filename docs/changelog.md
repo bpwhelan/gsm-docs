@@ -1022,7 +1022,7 @@ Introduced **Secondary (Purple) Areas** (`Ctrl + Left Click`).
 *   **VAD:** Whisper is now the default VAD. Added `Turbo` model option.
 *   **Config:** Added "Audio Extraction END Offset".
 *   **Fix:** Crash when TCL_LIBRARY env var was set.
-*   **Fix:** OneOCR failing on small images (<50px).
+*   **Fix:** OneOCR failing on small images (&lt;50px).
 
 ---
 
