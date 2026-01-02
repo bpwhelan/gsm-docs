@@ -27,9 +27,6 @@ Profiles allow you to create specific configurations for different games. For ex
 ### Black Bar Removal for Animated Screenshots
 Added logic to detect and remove black bars from **Animated Screenshots** (AVIF).
 
-<video controls width="100%">
-  <source src="https://cdn.discordapp.com/attachments/1286409772383342667/1456681938684481770/animated_before.mp4?ex=69594046&is=6957eec6&hm=2c9cfb8baf745379a82bddbb6d73d5b8ca5593f9d20590dc5ee6ad51d982445f&" />
-</video>
 
 ### Experimental: Overlay Hotkey to Texthooker
 Added a workflow for games with "too much text" (e.g., *Needy Streamer Overload*).
