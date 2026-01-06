@@ -112,7 +112,7 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
 
     You can configure these in **Desktop Mode** by pressing the **Steam** button > **Controller Settings** while the game is running.
 
-    ### 4. Recommended Settings
+    ### 5. Recommended Settings
 
     In GSM, go to **Settings** and adjust the following for better performance on the Deck, to open GSM Settings, there is a button in the `Home` tab.
     - VAD Settings:
@@ -122,6 +122,14 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
       - `Clipboard Enabled`: `OFF` - Saves resources. Linux Clipboard compatibility is not great compared to Windows, and I recommend using websocket anyway.
     - Features Settings:
         - `Open Anki Note in Edit View`: `OFF` - It's pretty distracting on Deck.
+
+    ### 6. Put it all together
+
+    - Start GSM, OBS, Anki
+    - Launch your Game
+    - Launch OCR/Texthooker
+    - Play normally, alt tab between game and texthooker as needed for lookups and mining.
+    - Overlay support is experimental on Deck, so may not work correctly.
 
     <details>
       <summary>📸 Complete Installation Screenshots (Click to expand)</summary>
