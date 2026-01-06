@@ -22,6 +22,8 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
 
     Running GSM natively allows you to mine sentences anywhere, even without an internet connection. This guide focuses on using the Steam Deck's Desktop Mode to set everything up.
 
+    These instructions are on a completely fresh Steam Deck install, if you run into any issues, please open an issue on the [GitHub repository](https://github.com/bpwhelan/GameSentenceMiner/issues), or join the [GSM Discord](https://discord.gg/yP8Qse6bb8).
+
     :::note
     Using GSM in Game mode is not currently supported due to system limitations. As long as GSM uses OBS for capture, it will likely not be supported without some major rewrite. If you want to use GSM in Gaming Mode, please consider streaming from a PC instead.
     :::
@@ -129,7 +131,7 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
     ![Screenshot 1](/img/deck/dump/Screenshot_20260106_094724.png)
     
     ---
-    
+
     ![Screenshot 2](/img/deck/dump/Screenshot_20260106_094806.png)
 
     ---
