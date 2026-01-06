@@ -43,7 +43,7 @@ If you want something simple, Lapis is a great choice. If you want something mor
 
     Kiku is a very new note type and is rapidly evolving. I've moved to using Kiku as my primary note type due to its rich feature set and active development. Below are the recommended Yomitan field mappings for Kiku.
 
-    ![Kiku Preview](../assets/kiku.webp)
+    ![Kiku Preview](/img/kiku.webp)
 
     ### 1. Installation
     
@@ -88,14 +88,14 @@ If you want something simple, Lapis is a great choice. If you want something mor
   <TabItem value="lapis" label="Lapis">
 
     <!-- <div style={{margin: '0 0 1rem 0'}}>
-    <img src="../assets/Lapis.gif" alt="Lapis preview" style={{maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto'}} />
+    <img src="/img/Lapis.gif" alt="Lapis preview" style={{maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto'}} />
     </div> -->
 
     ## Lapis Setup
 
     I used to use Lapis, and it remains a solid choice for it's simplicity and ease of use. Below are the recommended Yomitan field mappings for Lapis.
 
-    ![Lapis Preview](../assets/Lapis.gif)
+    ![Lapis Preview](/img/Lapis.gif)
 
     ### 1. Installation
     
@@ -140,14 +140,14 @@ If you want something simple, Lapis is a great choice. If you want something mor
   <TabItem value="senren" label="Senren">
 
     <!-- <div style={{margin: '0 0 1rem 0'}}>
-    <video src="../assets/senren.mp4" controls style={{maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto'}}></video>
+    <video src="/img/senren.mp4" controls style={{maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto'}}></video>
     </div> -->
 
     ## Senren Setup
 
     Senren is a very attractive option based on looks alone. I have never used Senren, so I can't offer support beyond this setup guide, which is directly from the Senren documentation.
 
-    ![Senren Preview](../assets/senren.webp)
+    ![Senren Preview](/img/senren.webp)
 
     ### 1. Yomitan Fields
     

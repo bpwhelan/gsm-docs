@@ -14,7 +14,7 @@ GSM can leverage Large Language Models (LLMs) to provide context-aware translati
 
 All AI configuration is handled in the **AI** tab within GSM's settings. You must provide an API key for the service you wish to use.
 
-![AI Settings Tab](../assets/ai/settings.png)
+![AI Settings Tab](/img/ai/settings.png)
 
 <Tabs>
 <TabItem value="gemini" label="Google Gemini" default>

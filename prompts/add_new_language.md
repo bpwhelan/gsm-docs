@@ -29,7 +29,7 @@
 >     d. Save the translated markdown file to its corresponding new path.
 >
 > **6. Correct Asset Paths and Heading IDs:**
-> - As you translate each markdown file, meticulously correct all relative image and asset paths. The paths must be relative from the new file's location in the `i18n` folder to the original asset's location in the `docs/assets` folder (e.g., `../../../../docs/assets/image.png`).
+> - As you translate each markdown file, meticulously correct all relative image and asset paths. The paths must be relative from the new file's location in the `i18n` folder to the original asset's location in the `docs/assets` folder (e.g., `/img/image.png`).
 > - For document navigation, add explicit heading IDs to all major section headers in the translated markdown files (e.g., `## 新しいセクション {#new-section}`). This is crucial for non-Latin character sets to prevent broken anchor links.
 >
 > **7. Final Verification:**

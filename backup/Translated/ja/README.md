@@ -93,7 +93,7 @@ https://youtu.be/m1MweBsHbwI
 
 GSMには、現在**32種類のグラフ**を備えた統計ページがあり、充実したデータを視覚化できます。
 
-![stats](../../assets/overview2.png)
+![stats](/img/overview2.png)
 
 この統計は、ただ見た目が良いだけではありません。
 
@@ -101,23 +101,23 @@ GSMには、現在**32種類のグラフ**を備えた統計ページがあり�
 
 目標を設定し、それを達成するために毎日必要なタスクを正確に確認できます：
 
-![stats](../../assets/goals2.png)
+![stats](/img/goals2.png)
 
 読んだすべての漢字を、好きな順序で表示できます：
 
-![stats](../../assets/kanji_grid2.png)
+![stats](/img/kanji_grid2.png)
 
 そして、それらをクリックすると、その漢字を含むすべての文章を見ることができます：
 
-![stats](../../assets/search2.png)
+![stats](/img/search2.png)
 
 Ankiを使っていますか？よく読む漢字だけど、まだAnkiに入っていない漢字を見つけられます：
 
-![stats](../../assets/anki2.png)
+![stats](/img/anki2.png)
 
 高度なツールで、好きな方法でデータをクリーンアップできます。
 
-![stats](../../assets/db_management2.png)
+![stats](/img/db_management2.png)
 
 これらの統計は、ただ見た目を良くするためだけでなく、以下のような質問に答えるために設計されています：
 * 楽しさと学習の両方を最大化できるゲームは何か？

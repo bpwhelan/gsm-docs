@@ -383,7 +383,7 @@ This tab controls everything related to capturing, processing, and timing screen
 <details>
 <summary>Example</summary>
 
-![Animated Screenshot Example](assets/settings/animated.webp)
+![Animated Screenshot Example](/img/settings/animated.webp)
 
 This is what an animated screenshot looks like when the "Animated" setting is enabled. It creates a short, looping clip of the scene instead of a single frame.
 

@@ -47,7 +47,7 @@ Yomitan の設定を開いてください：
 
     Kiku は比較的新しいノートタイプで、現在活発に進化しています。以下は推奨される Yomitan のフィールドマッピングです。
 
-    ![Kiku Preview](../../../../../docs/assets/kiku.webp)
+    ![Kiku Preview](/img/kiku.webp)
 
     ### 1. インストール
     
@@ -95,7 +95,7 @@ Yomitan の設定を開いてください：
 
     Lapis はシンプルで使いやすく、引き続き良い選択肢です。以下は推奨される Yomitan のフィールドマッピングです。
 
-    ![Lapis Preview](../../../../../docs/assets/Lapis.gif)
+    ![Lapis Preview](/img/Lapis.gif)
 
     ### 1. インストール
     
@@ -143,7 +143,7 @@ Yomitan の設定を開いてください：
 
     Senren は見た目が魅力的なオプションです。私は Senren を使ったことがないため、ここでは公式ドキュメントに基づく設定のみを案内します。
 
-    ![Senren Preview](../../../../../docs/assets/senren.webp)
+    ![Senren Preview](/img/senren.webp)
 
     ### 1. Yomitan のフィールド
 

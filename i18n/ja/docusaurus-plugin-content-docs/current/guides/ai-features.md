@@ -14,7 +14,7 @@ GSMは、大規模言語モデル（LLM）を活用して、マイニングし�
 
 すべてのAI設定は、GSMの設定内の**AI**タブで処理されます。使用したいサービスのAPIキーを提供する必要があります。
 
-![AI設定タブ](../../../../../docs/assets/ai/settings.png)
+![AI設定タブ](/img/ai/settings.png)
 
 <Tabs>
 <TabItem value="gemini" label="Google Gemini" default>

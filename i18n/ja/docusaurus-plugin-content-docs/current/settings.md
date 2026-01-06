@@ -383,7 +383,7 @@ toc_max_heading_level: 2
 <details>
 <summary>例</summary>
 
-![Animated Screenshot Example](../../../../docs/assets/settings/animated.webp)
+![Animated Screenshot Example](/img/settings/animated.webp)
 
 これは、「アニメーション」設定が有効になっている場合のアニメーションスクリーンショットの外観です。単一のフレームの代わりに、シーンの短いループクリップが作成されます。
 

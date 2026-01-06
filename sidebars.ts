@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/windows',
         'getting-started/linux',
         'getting-started/macos',
+        'getting-started/deck'
       ],
     },
     {

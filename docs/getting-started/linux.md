@@ -16,7 +16,7 @@ These Instructions are built from testing and chatting with users on various dis
 
 ## 1. Prerequisites (System Packages)
 
-You must install several dependencies using your distribution's package manager. The required packages differ slightly between distributions.
+You may need to install several dependencies using your distribution's package manager. The required packages differ slightly between distributions, and may not even be required.
 
 #### For Debian / Ubuntu-based Distributions:
 
