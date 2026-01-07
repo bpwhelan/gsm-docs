@@ -67,7 +67,7 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
     ![OBS FPS Settings](/img/deck/obs_fps.png) 
 
     #### Install Anki
-    The Flatpak version of Anki on the Discover store can sometimes have issues with add-ons or permissions. I recommend the official Linux build.
+    The Flatpak version of Anki on the Discover store can sometimes have issues with add-ons or permissions (I'm not sure if this is true tbh). I just used the official Linux build.
 
     1. Go to the [official Anki website](https://apps.ankiweb.net/).
     2. Download the Linux version (Download Anki for Linux -> Download .tar.zst).
