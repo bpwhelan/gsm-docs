@@ -192,5 +192,5 @@ If you encounter issues or have questions:
 
 ## Donations
 
-If you've found this or any of my other projects helpful, please consider supporting my work through [GitHub Sponsors](https://github.com/sponsors/bpwhelan), or [Ko-fi](https://ko-fi.com/beangate).
+If you've found this or any of my other projects helpful, please consider supporting my work by donating millions of dollars to [GitHub Sponsors](https://github.com/sponsors/bpwhelan), or [Ko-fi](https://ko-fi.com/beangate)
 
