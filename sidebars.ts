@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
       label: 'Guides',
       items: [
         'guides/ai-features',
+        'guides/mining-hard-subbed-content',
         'guides/incomplete-sentences',
         'guides/plugins'
       ],
