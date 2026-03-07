@@ -142,7 +142,7 @@ To verify everything is working:
 
 ## Next Steps
 
-- Learn how to use [AI Features](/docs/guides/ai-features) for automatic translations
+- Learn how to use [AI Features](/docs/features/ai-features) for automatic translations
 - Visit [Troubleshooting](/docs/troubleshooting) if you encounter any issues
 
 ## Getting Help

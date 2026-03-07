@@ -1,12 +1,12 @@
 ---
-title: Using AI Features
+title: AI Features
 sidebar_label: AI Features
-sidebar_position: 1
+sidebar_position: 6
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Admonition from '@theme/Admonition';
+import ImageFrame from '@site/src/components/ImageFrame';
 
 GSM can leverage Large Language Models (LLMs) to provide context-aware translations or summaries for your mined sentences, which can be automatically added to your Anki cards.
 
@@ -14,12 +14,12 @@ GSM can leverage Large Language Models (LLMs) to provide context-aware translati
 
 All AI configuration is handled in the **AI** tab within GSM's settings. You must provide an API key for the service you wish to use.
 
-![AI Settings Tab](/img/ai/settings.png)
+<ImageFrame src="/img/ai/settings.png" alt="AI Settings Tab" caption="AI provider and prompt configuration in GSM settings" />
 
 <Tabs>
 <TabItem value="gemini" label="Google Gemini" default>
 
-Google's Gemini recenly underwent a massive downgrade in free tier availability. But some models like gemma-3-27b are still generously supported in free tier, and are good enough for translations.
+Google's Gemini recently underwent a massive downgrade in free tier availability. But some models like gemma-3-27b are still generously supported in free tier, and are good enough for translations.
 
 1.  Go to **[Google AI Studio](https://aistudio.google.com/app/apikey)** and sign in with your Google account.
 2.  Click **Create API Key** and copy the generated key.
@@ -60,9 +60,59 @@ For OpenAI, you may be able to get free tokens by opting in to sharing your API 
     -   **OpenRouter**: `https://openrouter.ai/api/v1`
 
 </TabItem>
+<TabItem value="ollama" label="Ollama">
+
+Ollama is a great option if you want local models, but it is also a very practical cloud option now. For a lot of people, **Ollama Cloud** makes more sense than running a big model locally while gaming.
+
+### Local Ollama
+
+1. Install **[Ollama](https://ollama.com/)** and make sure the Ollama server is running.
+2. Pull a model you want to use, for example:
+
+   ```bash
+   ollama pull qwen3:8b
+   ```
+
+3. In GSM's AI settings, choose **Ollama** as the provider.
+4. Set the `Ollama URL` if needed. The default is `http://localhost:11434`.
+5. Pick your `Ollama Model`. GSM also supports an optional `Ollama Backup Model` if the primary one fails.
+
+### Ollama Cloud
+
+Ollama's official docs now support cloud-hosted models through the same API family. There are two useful ways to think about this:
+
+- **Through your local Ollama install**: sign in with `ollama signin`, then use cloud-enabled models from your local Ollama endpoint.
+- **Direct to Ollama's hosted API**: Ollama exposes a hosted API at `https://ollama.com/api` for cloud access.
+
+For GSM users, the easiest path is usually:
+
+1. Install Ollama normally.
+2. Run `ollama signin`.
+3. Use a cloud model from your Ollama install.
+4. Keep GSM pointed at your normal local Ollama URL: `http://localhost:11434`.
+
+This is nice because you still use GSM's normal Ollama provider setup, but the heavy model work can be offloaded to Ollama's cloud instead of your gaming PC.
+
+If you want to use Ollama's hosted API directly instead, set the `Ollama URL` to `https://ollama.com` and use an Ollama API key for that hosted setup.
+
+Recommendations:
+
+- If you are gaming on the same machine, prefer **Ollama Cloud** or smaller local models.
+- For local use, `qwen3:8b` or similar midsize instruction-tuned models are a good balance of speed and quality.
+- Keep a backup model configured if you frequently swap models around.
+
+:::tip
+Local Ollama does not require an API key. Hosted access on `ollama.com` does.
+:::
+
+:::note
+According to Ollama's official docs, cloud models can be used through the local Ollama workflow after `ollama signin`, and Ollama also provides a hosted API at `https://ollama.com/api`.
+:::
+
+</TabItem>
 <TabItem value="local" label="Local LLMs (LM Studio, etc.)">
 
-For privacy or offline use, you can run an OpenAI-compatible server locally. This requires a separate setup using a tool like LM Studio (Which I recommend), Ollama, Jan, or KoboldCpp.
+For privacy or offline use, you can run an OpenAI-compatible server locally. This requires a separate setup using a tool like LM Studio (which I recommend), Ollama, Jan, or KoboldCpp.
 
 1.  In GSM's AI settings, set the `OpenAI API URL` to your local server's address (e.g., `http://localhost:1234/v1`).
 2.  Set the `OpenAI API Key` to any non-empty value (e.g., `lm-studio`).

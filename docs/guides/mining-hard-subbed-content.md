@@ -8,11 +8,17 @@ import Admonition from '@theme/Admonition';
 
 ## Overview
 
+![Hard-Subbed Mining Example](/img/guides/hard-subbed-content.png)
+
+How to mine this?
+
 GSM can be used to mine from anime, movies, or any video content with hard-coded subtitles (hard subs). This is particularly useful when:
 
 - You're learning a language with limited gaming content (e.g., Vietnamese, Thai, Indonesian)
 - You want to mine from streaming sites with embedded subtitles
 - You're watching fansub releases with burned-in subtitles
+
+Example:
 
 While not as seamless as mining from games, this workflow allows you to capture both audio and screenshots from video content with hard subs.
 

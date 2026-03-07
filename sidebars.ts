@@ -28,9 +28,23 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Features',
+      collapsed: false,
+      items: [
+        'features/anki-enhancement',
+        'features/ocr',
+        'features/overlay',
+        'features/overlay-gamepad',
+        'features/longplay',
+        'features/ai-features',
+        'features/autolauncher',
+        'features/game-pausing',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Guides',
       items: [
-        'guides/ai-features',
         'guides/custom-name-dictionary',
         'guides/mining-hard-subbed-content',
         'guides/incomplete-sentences',
