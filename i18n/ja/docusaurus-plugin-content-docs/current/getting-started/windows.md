@@ -142,7 +142,7 @@ GSMは、ポート`9001`（[Agent](https://github.com/0xDC00/agent)）、`6677`�
 
 ## 次のステップ
 
-- 自動翻訳に[AI機能](/docs/guides/ai-features)を使用する方法を学びます
+- 自動翻訳に[AI機能](/docs/features/ai-features)を使用する方法を学びます
 - 問題が発生した場合は[トラブルシューティング](/docs/troubleshooting)にアクセスしてください
 
 ## ヘルプの入手

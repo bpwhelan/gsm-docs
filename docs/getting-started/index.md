@@ -64,7 +64,7 @@ Once you're set up, here's your typical mining session:
 
 After installation:
 
-- Set up [AI Features](/docs/guides/ai-features) for automatic translations
+- Set up [AI Features](/docs/features/ai-features) for automatic translations
 - Check [Troubleshooting](/docs/troubleshooting) if you run into issues
 
 ## Community & Support

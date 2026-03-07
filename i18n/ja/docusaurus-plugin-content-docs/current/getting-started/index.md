@@ -63,7 +63,7 @@ GSMは複数のオペレーティングシステムで利用できます。特�
 
 インストール後：
 
-- 自動翻訳のために[AI機能](/docs/guides/ai-features)を設定します
+- 自動翻訳のために[AI機能](/docs/features/ai-features)を設定します
 - 問題が発生した場合は[トラブルシューティング](/docs/troubleshooting)を確認します
 
 ## コミュニティとサポート
