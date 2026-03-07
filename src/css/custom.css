@@ -58,3 +58,27 @@
 .header-discord-link:hover::before {
   background-color: var(--ifm-navbar-link-hover-color);
 }
+
+html[data-navbar='false'] .theme-layout-navbar,
+html[data-navbar='false'] .navbar {
+  display: none;
+}
+
+html[data-footer='false'] .theme-layout-footer,
+html[data-footer='false'] .footer {
+  display: none;
+}
+
+html[data-sidebar='false'] .theme-doc-sidebar-container {
+  display: none;
+}
+
+@media (min-width: 997px) {
+  html[data-sidebar='false'] [class*='docMainContainer'] {
+    max-width: 100%;
+  }
+
+  html[data-sidebar='false'] [class*='docItemWrapper'] {
+    max-width: var(--ifm-container-width) !important;
+  }
+}

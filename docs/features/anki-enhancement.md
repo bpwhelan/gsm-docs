@@ -10,7 +10,7 @@ Anki Enhancement is GSM's core feature. It monitors Anki for newly created cards
 
 <ImageFrame src="/img/features/anki/enhanced-card.png" alt="An Anki card enhanced by GSM" caption="A card before and after GSM enhancement — audio, screenshot, and game context added automatically" />
 
-## What Gets Added
+## What Can Be Added
 
 When you mine a word in Yomitan and a new card appears in Anki, GSM can automatically add:
 
