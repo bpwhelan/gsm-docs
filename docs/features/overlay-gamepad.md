@@ -10,7 +10,7 @@ import ImageFrame from '@site/src/components/ImageFrame';
 The GSM Overlay has built-in gamepad support, letting you navigate detected text and trigger Yomitan dictionary lookups entirely with a controller — no keyboard or mouse required.
 
 :::note
-This feature is marked **Experimental**. It requires the GSM Overlay to be running and the Rust gamepad server to be active (bundled with GSM).
+This feature is marked **Experimental**. It should work, but one man is not enough to test all controllers and setups.
 :::
 
 ## Video Guide
