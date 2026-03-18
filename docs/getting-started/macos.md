@@ -20,7 +20,7 @@ Before you begin, you'll need to install several key pieces of software. We high
     ```sh
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
--   **Python 3.11**: GSM requires 3.10, 3.11, 3.12, or 3.13 to function. GSM on Windows runs on 3.13 by default, so I recommend using it. At the moment, mac auto installation is a bit broken, so you may need to run this set of commands to install the python portion.
+-   **Python 3.13**: GSM requires 3.10, 3.11, 3.12, or 3.13 to function. GSM on Windows runs on 3.13 by default, so I recommend using it. At the moment, mac auto installation is a bit broken, so you may need to run this set of commands to install the python portion.
     ```sh
     brew install python@3.13
     python3.13 -m venv ~/.config/GameSentenceMiner/python_venv
