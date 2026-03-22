@@ -68,6 +68,8 @@ This is especially nice for:
 
 ## Setup
 
+<ImageFrame src="/img/features/gamepausing/settings.png" alt="Game Pausing settings in GSM" caption="Game Pausing settings in GSM" />
+
 Game Pausing lives in the **Experimental** tab.
 
 1. Enable **Experimental Features**.
