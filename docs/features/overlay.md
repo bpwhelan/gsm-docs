@@ -142,7 +142,6 @@ You can also reach the overlay's Yomitan and settings-related actions from the *
 | Scan modifier key | `No key` | Just hover over text to scan — no key needed. |
 | Select Matched Text | `Disabled` | Cleaner appearance. |
 | Auto-hide search popup | `Enabled` (delay: `50`) | Popup disappears quickly when you move away. |
-| Allow scanning popup content | `Disabled` | Avoids a known interaction bug with the overlay. |
 
 ## Custom CSS for Yomitan
 
