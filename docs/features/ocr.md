@@ -73,8 +73,8 @@ Before OCR can run, you need to define the screen region(s) to scan. The area se
 | <span style={{color: 'green'}}>**Green**</span> | Left Click | **Primary area** — dialogue or text that should be captured automatically. |
 | <span style={{color: 'orange'}}>**Orange**</span> | Shift + Left Click | **Exclusion zone** — text within this area is ignored entirely. |
 | <span style={{color: 'purple'}}>**Purple**</span> | Ctrl + Left Click | **Menu area** — text captured only via the Manual/Menu OCR hotkey, not automatically. |
-| <span style={{color: 'deepskyblue'}}>**Cyan**</span> | Alt + Left Click | **Exclusive area** — if text appears in this box, *only* its results are sent, ignoring all other automatic (green) boxes. Useful for specific layouts, e.g. capturing chatter in the bottom-left while ignoring an "after-battle summary" that appears in the normal dialogue area. |
-| **Black** | Ctrl + Alt + Left Click | **Black hole** — if *any* text is detected in this box, the entire OCR result is voided. Useful for suppressing capture when a consistent UI component (e.g. a HUD element) is present. |
+| <span style={{color: 'deepskyblue'}}>**Cyan**</span> | Alt + Left Click | **Exclusive area** — Very Niche, if text appears in this box, *only* its results are sent, ignoring all other automatic (green) boxes. Useful for specific layouts, e.g. capturing chatter in the bottom-left while ignoring an "after-battle summary" that appears in the normal dialogue area. |
+| **Black** | Ctrl + Alt + Left Click | **Black hole** — if *any* text is detected in this box, the entire OCR result is voided. Useful for suppressing capture when a consistent UI component (e.g. menu) is present. Extremely useful, but should be used very selectively. |
 
 There are no hard limits on how many boxes you can create, but keep it minimal for performance.
 
