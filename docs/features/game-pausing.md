@@ -4,6 +4,8 @@ sidebar_label: Game Pausing
 sidebar_position: 7
 ---
 
+import ImageFrame from '@site/src/components/ImageFrame';
+
 <figure style={{ textAlign: 'center', margin: '1.5rem 0' }}>
   <video
     src="/img/features/gamepausing/Game_Pausing_Demo.mp4"
