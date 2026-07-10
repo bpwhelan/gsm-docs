@@ -51,6 +51,7 @@ const sidebars: SidebarsConfig = {
         'guides/plugins'
       ],
     },
+    'changelog',
     'troubleshooting',
     'settings',
   ],
