@@ -9,7 +9,7 @@ sidebar_position: 5
 ## Run GSM on the Deck
 
 1. Choose **Steam → Power → Switch to Desktop**. Install OBS Studio from Discover.
-2. Follow the [Linux AppImage instructions](./linux.md) to start GSM, connect OBS and enable the replay buffer.
+2. Follow the [Linux instructions](./linux.md) to install FFmpeg on the Deck, start the GSM AppImage, connect OBS and enable the replay buffer.
 3. Start the game in Desktop Mode. Add its window from **Home** or select an existing OBS scene. Check the preview, then select a [hook](../features/text-hook.md) or draw an [OCR area](../features/ocr.md) around the dialogue.
 4. Advance one line and check the text feed. To look up words using the Deck controls, configure the [overlay gamepad bindings](../features/overlay-gamepad.md). For cards, run [Anki with AnkiConnect](./yomitan-anki.md) on the Deck.
 

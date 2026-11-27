@@ -13,6 +13,8 @@ sidebar_position: 1
 - [macOS版と画面収録](./macos.md)
 - [Steam Deck本体での実行とPCからの配信](./deck.md)
 
+LinuxとmacOSでカードに音声や画像を付けるには、FFmpegを別途インストールしてください。手順は各OSのガイドにあります。
+
 ## 初回起動
 
 表示言語と学習言語を選びます。**辞書**でYomitanかHachidoriを選び、学習言語の辞書が提示されたらインストールします。日本語の場合は、振り仮名や単語選択に使うSudachi辞書も設定できます。

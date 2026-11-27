@@ -8,6 +8,12 @@ sidebar_position: 3
 
 [リリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)から使いたいバージョンのx86-64用 **AppImage** をダウンロードします。ファイルの**プロパティ → 権限**でプログラムとしての実行を許可し、AppImageを開いて[初期設定](./index.md)を進めます。
 
+## FFmpegをインストールする
+
+GSMは `ffprobe` でOBSのリプレイを調べ、`ffmpeg` でカード用の音声や画像を切り出します。ディストリビューションのFFmpegパッケージをインストールしてください。DebianやUbuntuでは `sudo apt install ffmpeg` を実行します。ほかのディストリビューションの入手先は[FFmpegのダウンロードページ](https://ffmpeg.org/download.html)で確認できます。
+
+端末で `ffmpeg -version` と `ffprobe -version` を実行し、両方のバージョンが表示されることを確認します。GSMは自身の `PATH` から両方のコマンドを探します。実行ファイルを個別に用意した場合は、GSMの共有データフォルダー内の `ffmpeg` フォルダーに両方を置く方法もあります。
+
 ## OBSを接続する
 
 1. [OBS Studio](https://obsproject.com/download)をインストールし、ゲームと同じデスクトップセッションで起動します。

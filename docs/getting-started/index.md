@@ -13,6 +13,8 @@ Choose a package from the [GSM releases](https://github.com/bpwhelan/GameSentenc
 - [macOS disk image and screen capture](./macos.md)
 - [Steam Deck in Desktop Mode or streamed from a PC](./deck.md)
 
+Linux and macOS users need to install FFmpeg separately for card audio and screenshots. Both platform guides include the installation steps.
+
 ## First launch
 
 Choose your menu language and the language you are learning. In **Dictionary**, choose Yomitan or Hachidori and install a starter dictionary if offered. For Japanese, the guide also offers a Sudachi dictionary for readings and word selection.

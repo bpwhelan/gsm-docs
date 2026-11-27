@@ -9,7 +9,7 @@ sidebar_position: 5
 ## Deck本体で実行する
 
 1. **Steam → 電源 → デスクトップに切り替え**を選び、DiscoverからOBS Studioをインストールします。
-2. [Linux版AppImageの手順](./linux.md)でGSMを起動し、OBSを接続してリプレイバッファーを有効にします。
+2. [Linux版の手順](./linux.md)に従ってDeckにFFmpegを用意し、GSMのAppImageを起動します。OBSを接続してリプレイバッファーを有効にします。
 3. デスクトップモードでゲームを起動します。**ホーム**からゲームを追加するか、OBSで既存のシーンを選びます。プレビューで台詞を確認し、[フック](../features/text-hook.md)を選ぶか台詞を囲む[OCR領域](../features/ocr.md)を指定します。
 4. 台詞を一行送り、テキストフィードを確認します。Deckのコントローラーで辞書を引く場合は[ゲームパッド操作](../features/overlay-gamepad.md)を設定します。カードを作る場合はDeckで[AnkiとAnkiConnect](./yomitan-anki.md)を起動します。
 
