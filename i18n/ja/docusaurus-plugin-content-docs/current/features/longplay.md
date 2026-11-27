@@ -1,16 +1,23 @@
 ---
-title: "セッションを字幕付きで録画する"
+title: Longplay
 sidebar_label: Longplay
 sidebar_position: 6
 ---
 
-# セッションを字幕付きで録画する
+# Longplay
 
-Longplayは、取得した台詞をOBS録画の時刻に合わせてSRT字幕ファイルに保存します。
+LongplayはOBS録画に合わせて、ゲーム中の台詞をタイミング付きのSRT字幕ファイルに保存します。録画を後から見直したり、字幕付きで再生したりできます。
 
-1. GSMのメイン設定の **Features** で **Generate Longplay** を有効にします。
-2. フックまたはOCRを起動し、テキストフィードに台詞が届くことを確認します。
-3. OBSで通常の録画を開始し、何行か台詞を進めてから録画を停止します。
-4. 動画をプレーヤーで開き、隣に保存されたSRTを字幕として選びます。たとえば `MyGame.mkv` の字幕は `MyGame.srt` です。
+## 有効にする
 
-プレイ全体に字幕を付ける場合は通常の録画を使います。Ankiのカード用クリップにはリプレイバッファーを使います。
+1. GSMの **Settings → Features** を開きます。
+2. **Generate Longplay**を有効にします。
+3. テキスト取り込みが動作する状態で、OBSの録画を開始します。
+4. 録画を停止すると、動画の隣に同名のSRTファイルが保存されます。
+
+```text
+MyGame.mp4
+MyGame.srt
+```
+
+LongplayはOBSの通常録画に合わせて動作します。Ankiカード用のReplay Bufferの代替ではありません。

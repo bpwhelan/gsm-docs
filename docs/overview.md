@@ -1,22 +1,40 @@
 ---
-title: "GameSentenceMiner"
+title: GameSentenceMiner
 sidebar_label: Overview
 sidebar_position: 1
 ---
 
 # GameSentenceMiner
 
-GameSentenceMiner (GSM) captures dialogue while you play. You can read each line in the text feed, look up a word over the game, and save an Anki card with the sentence, audio and screenshot from that moment.
+GameSentenceMiner (GSM) turns game dialogue into material you can look up, mine, and review. It captures text from a game, lines that text up with the game audio and image, and can add that context to Anki when you make a card.
 
-## Start with one game
+## The usual workflow
 
-1. [Install the desktop app](./getting-started/index.md) and choose a dictionary in the setup guide.
-2. [Add a game and capture a line](./how-to-use-gsm.md). Use a [text hook](./features/text-hook.md) when one reads the game's dialogue, or use [OCR](./features/ocr.md) for visible text. For spoken lines without subtitles, there is also experimental [Windows speech recognition](./features/windows-speech-recognition.md).
-3. [Look up a word in the overlay](./features/overlay.md). You can read and track progress without Anki.
-4. When you want to mine, [connect Anki](./getting-started/yomitan-anki.md) and [check your first enhanced card](./features/anki-enhancement.md).
+1. **Set up a game capture.** The Home tab's capture wizard helps connect OBS and choose a text source.
+2. **Get dialogue into GSM.** Use a text hook when the game supports one, or choose OCR when it does not.
+3. **Look up a word.** Use the overlay for on-screen Yomitan lookups, or use the text feed in a browser.
+4. **Make an Anki card.** GSM can add matching dialogue, audio, screenshots, and other configured fields.
 
-## Continue a session
+## Start here
 
-Use [Game Automation](./features/autolauncher.md) to restore the right capture method when switching games. [Text Processing](./features/text-processing.md) cleans up recurring artifacts and [Longplay](./features/longplay.md) records the dialogue as subtitles. Review past sessions and goals under [Stats and Library](./features/stats-and-library.md).
+- [Install GSM](/docs/getting-started)
+- [Follow the first-use guide](/docs/how-to-use-gsm)
+- [Set up Anki and Yomitan](/docs/getting-started/yomitan-anki)
 
-If a step fails, follow the [capture and card checks](./troubleshooting.md). You can also ask in the [GSM Discord](https://discord.gg/yP8Qse6bb8) or [report an issue](https://github.com/bpwhelan/GameSentenceMiner/issues).
+The first-use guide walks through a complete session in that order. Read just the sections you need, or follow it from beginning to end before opening a game.
+
+## Ways to capture text
+
+- **Text hooks** read dialogue from a game's text output. GSM's **Texthook / Agent** tab helps select a hook and save it for the game.
+- **OCR** reads text from the captured game image. It is a good fallback for games without a usable hook, and for video or hard-subbed content.
+- **Windows Speech Recognition** can recognize speech from game audio when subtitles are unavailable. It is experimental and currently Windows-only.
+
+## Explore more features
+
+After the core workflow is working, explore [Game Automation](/docs/features/autolauncher), [Text Processing](/docs/features/text-processing), [AI tools](/docs/features/ai-features), [Longplay](/docs/features/longplay), [Game Pausing](/docs/features/game-pausing), and [Stats and Library tools](/docs/features/stats-and-library).
+
+## Help and community
+
+- [Common problems](/docs/troubleshooting)
+- [GSM Discord](https://discord.gg/yP8Qse6bb8)
+- [Report an issue](https://github.com/bpwhelan/GameSentenceMiner/issues)

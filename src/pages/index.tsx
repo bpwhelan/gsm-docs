@@ -32,7 +32,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`GameSentenceMiner docs`}
-      description="Install GameSentenceMiner, capture game dialogue, look up words, and save cards to Anki.">
+      description="GameSentenceMiner docs">
       <HomepageHeader />
     </Layout>
   );

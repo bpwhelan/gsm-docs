@@ -1,6 +1,6 @@
 ---
-title: 旧プラグインからの移行
-sidebar_label: 旧プラグインからの移行
+title: GSMプラグインシステム
+sidebar_label: プラグイン
 sidebar_position: 3
 ---
 

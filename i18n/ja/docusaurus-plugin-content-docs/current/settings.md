@@ -1,21 +1,35 @@
 ---
-title: "設定項目を探す"
+title: GSMの設定
 sidebar_label: 設定
 sidebar_position: 10
 ---
 
-# 設定項目を探す
+# GSMの設定
 
-**設定**を開き、項目名で検索します。マイニングの設定を変える前に、対象のプロファイルとゲームを確認してください。**デスクトップ**にはアプリの設定、OBS管理、辞書があり、**マイニング**には取得、テキスト、カードの設定があります。接続設定には共通の項目があり、ゲーム別の設定ではベースプロファイルを継承したり上書きしたりできます。
+新しいゲームの初期設定にはHomeタブの **Add a game** を使います。設定タブでは、その後の接続や機能を変更できます。項目はテーマごとにまとまっており、検索から設定を探せます。
 
-| やりたいこと | 設定場所 |
-| --- | --- |
-| 初期設定を再開する・表示タブを変える | **一般**のセットアップガイド、またはタブとウィンドウの設定 |
-| YomitanとHachidoriを切り替える・ブラウザーの辞書を取り込む | **辞書**のリーダー選択またはブラウザーからのインポート |
-| 外部アプリから台詞を受け取る | メイン設定の**一般**でWebSocketまたはクリップボード入力を設定 |
-| カードのフィールドや確認方法を変える | **Anki**。[カード設定](./features/anki-enhancement.md) |
-| 音声・画像やリプレイの取得を調整する | **音声**、**スクリーンショット**、**OBS** |
-| 翻訳プロバイダーやプロンプトを変える | **AI and translation**。[AI設定](./features/ai-features.md) |
-| データの保存先を選ぶ・設定をバックアップする | **データフォルダー**、**バックアップと復元** |
+## GSMの主な設定
 
-**OCR**、**Texthook / Agent**、**テキスト処理**には専用タブがあります。**オーバーレイ設定**は別ウィンドウで、表示、文字認識、ショートカット、コントローラーの割り当てを変更できます。[オーバーレイのガイド](./features/overlay.md)
+- **General / Key Settings**：入力方法、起動動作、接続、初期設定
+- **Paths and Exported Media**：録画や出力先、メディアの整理
+- **Anki**：AnkiConnect、ノートタイプ、フィールド、確認画面。詳しくは[Anki Enhancement](./features/anki-enhancement.md)。
+- **Audio / Screenshots / OBS**：音声、画像、OBSキャプチャ
+- **Text Processing**：取り込んだテキストの置換やフィルター
+- **AI / Translation**：AIプロバイダー、プロンプト、自動出力
+- **Features**：Longplayや実験的なGame Pausingなど
+- **Profiles**：ゲームごとの設定
+- **Data Folder / Backups**：データ移動とバックアップ
+
+一部の設定はプロファイル間で共有され、音声、スクリーンショット、Anki、テキスト処理はプロファイルごとに分けられます。OCR範囲とGame Automationの設定はOBSシーン単位です。
+
+## オーバーレイ設定は別ウィンドウです
+
+Homeタブの **Overlay Settings** を開くと、オーバーレイ表示、操作、OCRキャプチャ、翻訳、ゲームパッド、プロファイルの設定に進めます。詳しくは[オーバーレイ](./features/overlay.md)をご覧ください。
+
+## 関連ガイド
+
+- [テキストフック](./features/text-hook.md)
+- [OCR](./features/ocr.md)
+- [Game Automation](./features/autolauncher.md)
+- [Windows音声認識](./features/windows-speech-recognition.md)
+- [統計とゲームライブラリ](./features/stats-and-library.md)

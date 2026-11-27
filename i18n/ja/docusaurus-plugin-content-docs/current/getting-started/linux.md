@@ -1,27 +1,40 @@
 ---
-title: "LinuxにGSMをインストールする"
+title: LinuxにGSMをインストールする
 sidebar_label: Linux
 sidebar_position: 3
 ---
 
-# LinuxにGSMをインストールする
+# LinuxにGameSentenceMinerをインストールする
 
-[リリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)から使いたいバージョンのx86-64用 **AppImage** をダウンロードします。ファイルの**プロパティ → 権限**でプログラムとしての実行を許可し、AppImageを開いて[初期設定](./index.md)を進めます。
+Linux版は実験的なサポートです。ディストリビューション、X11/Wayland、OBSのキャプチャ方法によって利用できる機能が異なります。
 
-## FFmpegをインストールする
+## 事前準備
 
-GSMは `ffprobe` でOBSのリプレイを調べ、`ffmpeg` でカード用の音声や画像を切り出します。ディストリビューションのFFmpegパッケージをインストールしてください。DebianやUbuntuでは `sudo apt install ffmpeg` を実行します。ほかのディストリビューションの入手先は[FFmpegのダウンロードページ](https://ffmpeg.org/download.html)で確認できます。
+- OBS Studio。
+- **FFmpeg**を別途インストールします。DebianやUbuntuでは `sudo apt install ffmpeg` を実行します。`ffmpeg -version` と `ffprobe -version` の両方でバージョンが表示されることを確認します。GSMから見つからない場合は、GSMのデータフォルダーの `ffmpeg` サブフォルダーに両方の実行ファイルを置いてください。
+- Ankiと[AnkiConnect](https://ankiweb.net/shared/info/2055492159)。
+- 音声やスクリーンショットを使う場合はOBSのWebSocketとReplay Bufferを有効にします。
 
-端末で `ffmpeg -version` と `ffprobe -version` を実行し、両方のバージョンが表示されることを確認します。GSMは自身の `PATH` から両方のコマンドを探します。実行ファイルを個別に用意した場合は、GSMの共有データフォルダー内の `ffmpeg` フォルダーに両方を置く方法もあります。
+## GSMのインストール
 
-## OBSを接続する
+1. [リリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)からAppImageをダウンロードします。
+2. ターミナルから実行権限を付けます：`chmod +x GameSentenceMiner-*.AppImage`
+3. AppImageを起動します。
 
-1. [OBS Studio](https://obsproject.com/download)をインストールし、ゲームと同じデスクトップセッションで起動します。
-2. OBSの**ツール → WebSocketサーバー設定**でサーバーと認証を有効にします。GSMのメイン設定の**OBS**に同じホスト、ポート、パスワードを入力してください。GSMの初期ポートは `7274` です。[OBSの接続ガイド](https://obsproject.com/kb/remote-control-guide)
-3. カード用のメディアを取得する場合は、OBSの**設定 → 出力 → リプレイバッファー**を有効にします。GSMのホームでOBSの接続を確認します。
+## OBSキャプチャとテキスト入力
 
-## ゲームをキャプチャする
+Homeタブの **Run Capture Wizard** でゲーム画像を確認します。ウィザードでシーンやキャプチャソースを作成できない場合は、OBSでシーンとソースを手動で追加してください。Waylandではコンポジターに対応したOBSキャプチャソースを使用し、必要に応じてPipeWireの権限を許可します。
 
-**ホーム → ゲームを追加**を開きます。X11ではXCompositeでウィンドウを取得します。WaylandではPipeWireの選択画面でゲームかディスプレイを指定します。既存のOBSシーンがある場合は、そのシーンに切り替えて台詞が映るか確認します。
+対応するゲームではWine/Proton経由のテキストフックを利用できます。フックが使えない場合はOCRを設定します。
 
-WineやProtonの対応タイトルでは[テキストフック](../features/text-hook.md)を試せます。画面上の文字を読むには[OCR](../features/ocr.md)を使います。カードを作る場合は[AnkiConnectを設定](./yomitan-anki.md)し、プレイ中はAnkiを開いておきます。
+- [テキストフックの設定](../features/text-hook.md)
+- [OCRの設定](../features/ocr.md)
+- [オーバーレイ](../features/overlay.md)
+
+## Linux固有の注意点
+
+- OneOCRはWindows専用です。使用できるOCRエンジンは現在のOCRタブで確認してください。
+- Waylandではコンポジターと画面キャプチャ権限によって動作が異なります。
+- グローバルホットキーやウィンドウフォーカスの挙動はデスクトップ環境に左右されることがあります。ショートカットが動作しない場合はGSMタブ内の操作を使ってください。
+
+Ankiカード、オーバーレイ、音声の手順は[GSMの使い方](../how-to-use-gsm.md)をご覧ください。

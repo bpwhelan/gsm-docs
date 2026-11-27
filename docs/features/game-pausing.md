@@ -1,15 +1,33 @@
 ---
-title: "Pause the game while reading"
+title: Game Pausing
 sidebar_label: Game Pausing
 sidebar_position: 7
 ---
 
-# Pause the game while reading
+# Game Pausing
 
-On Windows and Linux, Game Pausing suspends the process associated with the active OBS capture. Use it with a single-player game that can safely be suspended. Online games and games with anti-cheat may react to process suspension.
+Game Pausing temporarily suspends the game process GSM has matched to the active capture. It is an **experimental Windows and Linux feature** for games that do not pause while you read or use the overlay.
 
-1. In the main GSM settings, find **Features → Game Pausing** and enable it. Assign the pause hotkey and check the auto-resume timeout.
-2. Select the game scene in OBS. Keep executable matching enabled and check the denylist. On Linux, use the target process for the captured game or its scene. A display capture without an identified game process cannot supply a pause target.
-3. Try the hotkey once to pause and again to resume. After that works, choose which overlay or Anki actions should request a pause.
+:::caution
+Process suspension can make a game unstable. Avoid using it with online games, anti-cheat software, or games where suspending the process could violate the game's rules.
+:::
 
-Manual overlay activation, the overlay text feed, controller navigation and Anki confirmation can each request a pause. Closing one of these releases its request. The game can remain paused while another request is active.
+## Turn it on
+
+1. Open **Settings → Features** and find **Game Pausing**.
+2. Enable **Game Pausing** and review the executable matching and denylist safeguards.
+3. Set the manual pause shortcut and automatic resume timeout.
+4. Test on a single-player game before enabling any automatic pause behavior.
+
+GSM targets the process associated with the active OBS capture and checks the executable before suspending it. A timeout resumes the game automatically, and GSM has recovery controls if a tracked process remains suspended.
+
+## Connect it to reading
+
+Game Pausing can request a pause when you enter overlay manual mode, open the overlay text feed, use gamepad navigation, or review an Anki confirmation. These options are independent. Enable only the actions that fit your workflow, then confirm the game resumes when you leave that action.
+
+## If the pause command has no effect
+
+- Confirm **Game Pausing** is enabled and GSM is running on Windows or Linux.
+- Check that OBS is capturing the intended game and that the executable matches.
+- Check whether the executable is on the denylist.
+- Check the auto-resume timeout if the game resumes while you are still reading.

@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'GameSentenceMiner Documentation',
-  tagline: 'Read game dialogue, look up words, and save them to Anki',
+  tagline: 'Game your way to language fluency',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

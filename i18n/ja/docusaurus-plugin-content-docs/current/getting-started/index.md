@@ -4,21 +4,27 @@ sidebar_label: GSMのインストール
 sidebar_position: 1
 ---
 
-# GSMをインストールする
+# GameSentenceMinerをインストールする
 
-このガイドは新しいデスクトップ版が対象です。[リリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)からOSに合うパッケージを選んでください。プレビュー版を試す場合は、そのリリースの **Assets** を開きます。
+お使いのOSに合わせて手順を選んでください。Windowsが最も多くの機能に対応しています。LinuxとmacOSにはそれぞれ制限事項があります。
 
-- [Windows版とGSMが管理するOBS](./windows.md)
-- [Linux版のAppImageとOBS](./linux.md)
-- [macOS版と画面収録](./macos.md)
-- [Steam Deck本体での実行とPCからの配信](./deck.md)
+- [Windows](./windows.md)
+- [Linux](./linux.md)
+- [macOS](./macos.md)
+- [Steam Deck](./deck.md)
 
-LinuxとmacOSでカードに音声や画像を付けるには、FFmpegを別途インストールしてください。手順は各OSのガイドにあります。
+## 用意するもの
 
-## 初回起動
+- LinuxとmacOSでは、カードの音声とスクリーンショットのために **FFmpeg** を別途インストールします。
+- ゲーム画面と音声を取り込む **OBS Studio**
+- カードを更新する場合は **Anki** と **AnkiConnect**
+- カードを作成する場合は **Yomitan** などの辞書ツール。詳しくは[AnkiとYomitanの設定](./yomitan-anki.md)。
+- 学習したい言語のゲーム。テキストフックとOCRはGSMの機能から選べます。
 
-表示言語と学習言語を選びます。**辞書**でYomitanかHachidoriを選び、学習言語の辞書が提示されたらインストールします。日本語の場合は、振り仮名や単語選択に使うSudachi辞書も設定できます。
+インストール後、OBSとAnkiを接続し、[GSMの使い方](../how-to-use-gsm.md)に沿ってゲームの文字、オーバーレイ、Ankiカードを設定します。
 
-![表示言語と学習言語を選ぶGSMの初期設定画面](/img/desktop/setup-ja.png)
+:::tip
+すべての機能を最初から設定する必要はありません。Homeタブの **Add a game** がゲームごとのキャプチャ設定を案内します。
+:::
 
-ゲームを起動して台詞を表示し、**ゲームを追加**からキャプチャのプレビューを確認します。初期設定は途中で閉じても、設定の一般タブから再開できます。次は[最初のテキスト取得](../how-to-use-gsm.md)に進みます。カードを作りたい場合は[Ankiも接続](./yomitan-anki.md)してください。
+起動や接続で問題が起きた場合は[よくある問題](../troubleshooting.md)をご覧ください。

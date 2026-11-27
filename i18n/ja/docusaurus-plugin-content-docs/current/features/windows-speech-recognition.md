@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ## シーンごとに設定する
 
-1. **設定 → デスクトップ → 一般 → タブとウィンドウ**で、非表示の場合は**Windows Speech**タブを表示します。
+1. **Settings → Desktop → General → Tabs & windows**で、非表示の場合は**Windows Speech**タブを表示します。
 2. OBSを接続し、**Windows Speech**タブを開きます。
 3. 認識する音声があるOBSシーンを選びます。設定はシーンごとに保存されます。
 4. 言語とエンジンを選びます。**Embedded speech**が推奨、**Windows SAPI**は代替です。

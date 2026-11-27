@@ -1,6 +1,6 @@
 ---
-title: Moving from scheduled plugins
-sidebar_label: Replacing old plugins
+title: GSM Plugin System
+sidebar_label: Plugins
 sidebar_position: 3
 ---
 

@@ -1,19 +1,29 @@
 ---
-title: "Review reading history and manage game archives"
+title: Statistics and Game Library
 sidebar_label: Stats and Library
 sidebar_position: 8
 ---
 
-# Review reading history and manage game archives
+# Statistics and Game Library
 
-Open **Stats** to review reading time, character counts, reading speed, vocabulary and mining activity. Use **Games** to open an individual title and **Goals** to set a reading target.
+GSM's **Stats** tab collects reading activity across games and sessions. Use it to review progress, compare sessions, inspect vocabulary and kanji history, and set reading goals. The **Games** library stores each game's status and reading history.
 
-## Archive a finished game
+## Reading goals and history
 
-Use the game's archive action when you no longer need its individual sentences in everyday search. GSM writes and verifies an archive before taking the sentences out of the active database. The game keeps its reading statistics. The archive stores references to media, so keep the media files if you want to use them later.
+Goals can track reading activity over time. Daily hour goals keep minute-level progress, and completed live goals are hidden from the active-goal view. Check your goal page and game details to compare your recent activity with earlier sessions.
 
-In **Tools → Saved Game Archives**, find the archive and restore it to make the individual sentences searchable again. The archive folder is shown on the same page.
+## Archive completed games
+
+Use **Tools → Saved Game Archives** to reduce the active sentence database while keeping a restorable copy of game text.
+
+- Archive one game from its page, or select several games for a batch.
+- GSM verifies the archive file before removing sentences from the active database.
+- Reading time, character counts, sessions, reading speed, mining totals, kanji, and vocabulary statistics remain available while a game is archived.
+- Archived sentences leave text search until you restore the archive. The archive stores sentence data and media references; it does not duplicate the media files.
+- Restore from **Tools → Saved Game Archives**. GSM skips duplicate sentences and avoids counting the same reading statistics again.
 
 ## Maintain the database
 
-Under **Tools → Database Maintenance**, check the reported database size and reclaimable space. Use **Vacuum now** to compact it or select a maintenance schedule. Automatic archiving has a separate inactivity threshold for completed games. A threshold of zero disables it. See [Settings](../settings.md) for backups and the data-folder controls.
+Open **Tools → Database Maintenance** to check database size and reclaimable space or compact the database manually. Optional scheduled maintenance and automatic archiving of completed games are available there; both are disabled by default until you configure them.
+
+Make a backup before bulk cleanup if you are unsure which data you still need. See [Settings](../settings.md) for the data-folder location and backup controls.

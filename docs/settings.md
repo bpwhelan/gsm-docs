@@ -1,21 +1,37 @@
 ---
-title: "Find a setting"
+title: GSM Settings
 sidebar_label: Settings
 sidebar_position: 10
 ---
 
-# Find a setting
+# GSM Settings
 
-Open **Settings** and search for the option by name. Check the selected profile or game before editing a mining setting. **Desktop** contains app preferences, OBS management and dictionary libraries. **Mining** contains the settings for capture, text and cards. Some connection settings are shared, while a game can inherit or override options from its base profile.
+Use the Home tab's **Add a game** for a new game's first setup. The **Settings** tab is for changes after that: settings are grouped by topic, and search can take you directly to an option.
 
-| Task | Where to go |
-| --- | --- |
-| Resume first-run setup or change the visible tabs | **General → Open setup guide** or **Tabs & windows** |
-| Switch between Yomitan and Hachidori or import browser dictionaries | **Dictionary → Lookup reader** or **Import from browser** |
-| Receive dialogue from another app | Main **General** settings for WebSocket or clipboard input |
-| Map card fields or change confirmation behavior | **Anki**. See [Anki enhancement](./features/anki-enhancement.md). |
-| Change media or replay capture | **Audio**, **Screenshots** and **OBS** |
-| Change the provider or edit a prompt | **AI and translation**. See [AI setup](./features/ai-features.md). |
-| Choose a data location or back up settings | **Data Folder** or **Backup and Restore** |
+## Main GSM settings
 
-**OCR**, **Texthook / Agent** and **Text Processing** have their own workspaces in the tab bar. **Overlay Settings** opens a separate window for display, recognition, shortcuts and controller bindings. [Overlay guide](./features/overlay.md)
+Common groups include:
+
+- **General** and **Key Settings** for input sources, startup behavior, connection details, and first-run options.
+- **Paths and Exported Media** for replay, output, and cleanup locations.
+- **Anki** for AnkiConnect, note types, field mappings, and card confirmation. See [Anki Enhancement](./features/anki-enhancement.md).
+- **Audio**, **Screenshots**, and **OBS** for media capture and output.
+- **Text Processing** for replacing or filtering captured text. See [Text Processing](./features/text-processing.md).
+- **AI / Translation** for providers, prompts, and automatic output. See [AI Features](./features/ai-features.md).
+- **Features** for optional tools such as Longplay and experimental Game Pausing.
+- **Profiles** for different settings per game.
+- **Data Folder** and **Backups** for moving GSM data and restoring saved copies.
+
+Some options are shared across profiles, while audio, screenshot, Anki, and processing choices can vary by profile. OCR areas and Game Automation are associated with OBS scenes.
+
+## Overlay settings are separate
+
+**Overlay Settings** opens its own settings window from the Home tab. It controls overlay display, interaction, capture and OCR, translation, gamepad navigation, and overlay profiles. See [Overlay](./features/overlay.md) for the setup path and key controls.
+
+## Useful reference pages
+
+- [Text Hook Setup](./features/text-hook.md)
+- [OCR Setup](./features/ocr.md)
+- [Game Automation](./features/autolauncher.md)
+- [Windows Speech Recognition](./features/windows-speech-recognition.md)
+- [Statistics and Game Library](./features/stats-and-library.md)

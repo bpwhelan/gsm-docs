@@ -1,16 +1,35 @@
 ---
-title: "Start capture automatically for a game"
+title: Game Automation
 sidebar_label: Game Automation
 sidebar_position: 2
 ---
 
-# Start capture automatically for a game
+import ImageFrame from '@site/src/components/ImageFrame';
 
-Game Automation remembers the hook or OCR startup choice for each OBS scene. For example, one game can start a saved Luna hook while another starts automatic OCR.
+# Game Automation
 
-1. Add the game on **Home** and verify its capture. For an existing game, select it, open **⋯** beside its name and choose **Run Capture Wizard**.
-2. In the wizard, try [a text hook](./text-hook.md) or configure [OCR](./ocr.md). Advance a line to check the output.
-3. At **Finalize**, choose what should start with this game and save. Switch to another scene and back to check that the intended text source starts.
-4. Use the **Game Automation** tab to review the per-scene launch settings. Leave automatic startup off for sources you prefer to start yourself.
+Game Automation stores capture choices per OBS scene so GSM can start the right text source when you switch games. Use the Home tab's **Add a game** for a new game; use **Game Automation** when you want to adjust the saved scene profile later.
 
-The **Launch game** control on Home starts the game itself. Its launch options are separate from the choice of text source for that game.
+<ImageFrame src="/img/guides/capture-wizard.png" alt="GSM capture setup wizard" caption="The capture wizard saves text hook and OCR startup choices for the selected game." />
+
+## What a scene profile controls
+
+- Which text-hook engine or saved hook profile to use when the scene becomes active.
+- Whether OCR should start automatically or wait for a manual scan.
+- Shared paths for external tools such as Agent, Textractor, and LunaTranslator.
+- Optional launch delay and per-game capture behavior.
+
+GSM watches the active OBS scene and applies its saved choices. The profiles are independent, so you can use a different engine or OCR mode for each game. Text-hook engine selection and output checking are described in [Text Hook Setup](./text-hook.md).
+
+## Configure a game
+
+1. Open the game and make sure OBS is on the scene that captures it.
+2. Run **Home → select the game → ⋯ → Run Capture Wizard** and follow **Capture → Texthook → OCR → Finalize**.
+3. In **Finalize**, choose which text source should start automatically for this game.
+4. Switch away from and back to the scene, then check that the expected source is running and the text appears in GSM.
+
+To change shared tool paths or scene-specific automation afterward, open **Game Automation**. If a scene is not recognized, refresh the scene list and verify OBS is connected to the expected scene collection.
+
+:::note
+You can leave automation off and start a hook or OCR manually. Automation is a convenience for switching among games, not a requirement for capture.
+:::
