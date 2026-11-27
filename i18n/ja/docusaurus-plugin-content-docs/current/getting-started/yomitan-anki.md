@@ -10,6 +10,12 @@ import TabItem from '@theme/TabItem';
 
 # Anki/Yomitan セットアップ
 
+GSMの **Settings → Mining → Anki → General → Set up recommended Anki cards** からLapis、Kiku、Senrenの設定を案内できます。既存プロファイルを保持したままGSM用Yomitanプロファイルを作成します。以下は手動でフィールドを確認したい場合の手順です。
+
+:::note
+設定の対象は起動中のオーバーレイ版Yomitanです。ブラウザー版には **Copy Yomitan field table** でフィールド対応をコピーできます。オーバーレイには別のYomitanがあり、辞書やプロファイルは個別です。オーバーレイ内のYomitan設定から辞書をインポートしてください。
+:::
+
 ## 1. AnkiConnect をインストール
 
 Anki 側で次を実行します。
@@ -25,7 +31,7 @@ Yomitan の設定を開いてください：
 1. `Anki` -> `Enable Anki Integration` を有効にします。
 2. `Configure Anki Flashcards` を選択します。
 
-![alt text](image.png)
+YomitanでAnki連携を有効にし、**Configure Anki Flashcards**を開きます。インストールしたノートタイプを選び、フィールドを確認してください。
 
 ## 3. Anki ノートタイプのセットアップ
 

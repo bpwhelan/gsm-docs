@@ -1,142 +1,140 @@
 ---
 title: AI Features
 sidebar_label: AI Features
-sidebar_position: 6
+sidebar_position: 7
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import ImageFrame from '@site/src/components/ImageFrame';
 
-GSM can leverage Large Language Models (LLMs) to provide context-aware translations or summaries for your mined sentences, which can be automatically added to your Anki cards.
+# AI Features
 
-## Setup
+GSM can translate dialogue, explain a line, summarize nearby context, and add optional AI output to Anki. You can use a hosted provider, a local model, or DeepL for translations. This page walks through creating an account or local endpoint and connecting it to GSM.
 
-All AI configuration is handled in the **AI** tab within GSM's settings. You must provide an API key for the service you wish to use.
+## Connect a provider in GSM
 
-<ImageFrame src="/img/ai/settings.png" alt="AI Settings Tab" caption="AI provider and prompt configuration in GSM settings" />
+Open **Settings → Mining → AI and translation**. Choose a provider, follow its setup instructions below, then return to GSM and enter the key, model, and URL requested for that provider. GSM saves settings automatically.
 
-<Tabs>
-<TabItem value="gemini" label="Google Gemini" default>
+<ImageFrame src="/img/desktop/ai-en.png" alt="GSM AI provider and credentials settings" />
 
-Google's Gemini recently underwent a massive downgrade in free tier availability. But some models like gemma-3-27b are still generously supported in free tier, and are good enough for translations.
+1. Choose the provider you want to use. Its setup guide appears in the settings page and links to the current key-creation and pricing pages.
+2. Create or download a model as described below, then fill in the provider's fields. For hosted services, paste the API key into the matching key field. For local services, start the server first and select a model it serves.
+3. Try **Translate** or **Explain** from a game line. You do not need to enable **Add translation to Anki** to use these actions.
 
-1.  Go to **[Google AI Studio](https://aistudio.google.com/app/apikey)** and sign in with your Google account.
-2.  Click **Create API Key** and copy the generated key.
-3.  Paste this key into the `Gemini API Key` field in GSM's AI settings.
+Model names, access, quotas, and prices change. Select a model currently offered by the provider and check its linked pricing and limits before enabling repeated or automatic requests.
 
-Recommendations:
-Honestly, gemma3-27b is the only one worth using right now in terms of free tier. I will update this doc if that changes in the future.
+## Hosted text-generation providers
 
-:::note
-Gemini's free tier has regional availability. Check the [official documentation](https://ai.google.dev/gemini-api/docs/available-regions) to see if your region is supported.
-:::
+### Google Gemini
 
-</TabItem>
+1. Sign in to [Google AI Studio](https://aistudio.google.com/apikey) with your Google account and accept the Gemini API terms.
+2. Open the API Keys page. New users may already have a project and key. If you use an existing Google Cloud project that is not listed, import it from **Projects** first.
+3. Select **Create API key**, choose the project, and copy the key.
+4. In GSM, choose **Gemini**, paste the key into **Gemini API Key**, and select an available Gemini text model.
 
-<TabItem value="groq" label="Groq">
-Groq provides an easy-to-use LLM service with competitive pricing.
+See Google's [API key guide](https://ai.google.dev/gemini-api/docs/api-key), [model pricing](https://ai.google.dev/gemini-api/docs/pricing), and [supported regions](https://ai.google.dev/gemini-api/docs/available-regions). Free-tier access and quotas depend on the model, project, and region.
 
-1.  Go to **[Groq](https://console.groq.com/)** and sign in or create an account.
-2.  Navigate to the API section and generate a new API key.
-3.  Paste this key into the `Groq API Key` field in GSM's AI settings.
+### Groq
 
-Recommendations:
+1. [Sign in to GroqCloud](https://console.groq.com/keys), or create an account if you are new.
+2. Open **API Keys**, select **Create API Key**, give the key a name, and copy it.
+3. In GSM, choose **Groq**, paste the key into **Groq API Key**, and select a text model available to your account.
 
-- meta-llama/llama-4-maverick-17b-128e-instruct: 1000 requests per day, very accurate.
-- llama-3.1-8b-instant: 14000 requests per day, fast, and still probably good enough for most translations.
+Check Groq's current [models](https://console.groq.com/docs/models) and [rate limits](https://console.groq.com/docs/rate-limits). Free accounts have limits that vary by model and can change.
 
-</TabItem>
-<TabItem value="openai" label="OpenAI / OpenRouter">
+### Z.ai
 
-You can use any OpenAI-compatible API endpoint, including OpenAI itself, OpenRouter, or local LLMs.
+These fields are available to profiles that already have Z.ai selected.
 
-For OpenAI, you may be able to get free tokens by opting in to sharing your API inputs/outputs at Data Controls -> Sharing -> Share inputs and outputs with OpenAI. I personally have used millions of tokens and haven't been charged a dime. You may have to put in 5 dollars to unlock tier 1 before this becomes available though.
+1. Sign in to [Z.ai](https://z.ai/manage-apikey/apikey-list) or create an account.
+2. Open **API Keys**, create a key, and copy it.
+3. In the existing Z.ai profile, paste the key into **Z.ai API Key**, and choose an available model.
 
-1.  Obtain your API key from your chosen service.
-2.  Paste it into the `OpenAI API Key` field.
-3.  Set the `OpenAI API URL`. This should be the base URL of the API.
-    -   **OpenAI**: `https://api.openai.com/v1`
-    -   **OpenRouter**: `https://openrouter.ai/api/v1`
+GSM uses Z.ai's standard API. A separate Coding Plan is not required for standard API access. Check the current [pricing and model list](https://docs.z.ai/guides/overview/pricing) before choosing a model; free access or performance can vary.
 
-</TabItem>
-<TabItem value="ollama" label="Ollama">
+### OpenAI, OpenRouter, and other compatible APIs
 
-Ollama is a great option if you want local models, but it is also a very practical cloud option now. For a lot of people, **Ollama Cloud** makes more sense than running a big model locally while gaming.
+GSM's **OpenAI** provider can connect to OpenAI and other services that implement an OpenAI-compatible API.
 
-### Local Ollama
+#### OpenAI
 
-1. Install **[Ollama](https://ollama.com/)** and make sure the Ollama server is running.
-2. Pull a model you want to use, for example:
+1. Sign in to the [OpenAI API Platform](https://platform.openai.com/api-keys) or create an account.
+2. Open **API Keys**, create a secret key, and copy it. Configure API billing in the API Platform if required for your usage.
+3. In GSM, choose **OpenAI** and enter:
+   - **OpenAI API URL:** `https://api.openai.com/v1`
+   - **OpenAI Model:** a model ID currently available to your API account
+   - **OpenAI API Key:** the key you created
 
-   ```bash
-   ollama pull qwen3:8b
-   ```
+ChatGPT subscription billing and API Platform billing are separate. See the [OpenAI API billing guide](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform) and [API pricing](https://platform.openai.com/docs/pricing).
 
-3. In GSM's AI settings, choose **Ollama** as the provider.
-4. Set the `Ollama URL` if needed. The default is `http://localhost:11434`.
-5. Pick your `Ollama Model`. GSM also supports an optional `Ollama Backup Model` if the primary one fails.
+#### OpenRouter
 
-### Ollama Cloud
+1. [Create or sign in to an OpenRouter account](https://openrouter.ai/).
+2. Open [API Keys](https://openrouter.ai/settings/keys), create a key, and copy it.
+3. In GSM, choose **OpenAI** and enter:
+   - **OpenAI API URL:** `https://openrouter.ai/api/v1`
+   - **OpenAI Model:** the model ID shown by OpenRouter and available to your account
+   - **OpenAI API Key:** the OpenRouter key
 
-Ollama's official docs now support cloud-hosted models through the same API family. There are two useful ways to think about this:
+See the [OpenRouter quickstart](https://openrouter.ai/docs/quickstart) for its compatible endpoint and model ID format. Check the selected model's current price and availability in your OpenRouter account.
 
-- **Through your local Ollama install**: sign in with `ollama signin`, then use cloud-enabled models from your local Ollama endpoint.
-- **Direct to Ollama's hosted API**: Ollama exposes a hosted API at `https://ollama.com/api` for cloud access.
+#### Another OpenAI-compatible service
 
-For GSM users, the easiest path is usually:
+Create an API key with that service, then use its documented **base URL** and **model ID** in GSM's OpenAI fields. This also works with a local server; see [LM Studio](#lm-studio) below. The URL normally ends in `/v1`, but use the value supplied by the service.
 
-1. Install Ollama normally.
-2. Run `ollama signin`.
-3. Use a cloud model from your Ollama install.
-4. Keep GSM pointed at your normal local Ollama URL: `http://localhost:11434`.
+## Local models
 
-This is nice because you still use GSM's normal Ollama provider setup, but the heavy model work can be offloaded to Ollama's cloud instead of your gaming PC.
+### Ollama
 
-If you want to use Ollama's hosted API directly instead, set the `Ollama URL` to `https://ollama.com` and use an Ollama API key for that hosted setup.
+Local Ollama does not require an account or API key.
 
-Recommendations:
+1. Install [Ollama](https://ollama.com/download).
+2. Choose a text model from the [Ollama library](https://ollama.com/library) and download it in Ollama, or run `ollama pull MODEL_NAME` in a terminal, replacing `MODEL_NAME` with the model name from the library.
+3. Make sure the Ollama server is running. Its default URL is `http://localhost:11434`.
+4. In GSM, choose **Ollama**, enter that URL if it differs from the default, and select the downloaded model. You can optionally choose a backup model.
 
-- If you are gaming on the same machine, prefer **Ollama Cloud** or smaller local models.
-- For local use, `qwen3:8b` or similar midsize instruction-tuned models are a good balance of speed and quality.
-- Keep a backup model configured if you frequently swap models around.
+Ollama Cloud models require signing in to Ollama first. Run `ollama signin`, then choose a cloud model supported by your Ollama installation while keeping GSM connected to the local Ollama server. See [Ollama cloud models](https://ollama.com/blog/cloud-models).
 
-:::tip
-Local Ollama does not require an API key. Hosted access on `ollama.com` does.
-:::
+### LM Studio
 
-:::note
-According to Ollama's official docs, cloud models can be used through the local Ollama workflow after `ollama signin`, and Ollama also provides a hosted API at `https://ollama.com/api`.
-:::
+LM Studio runs a local model server and does not require a provider API account for ordinary local use.
 
-</TabItem>
-<TabItem value="local" label="Local LLMs (LM Studio, etc.)">
+1. Download and install [LM Studio](https://lmstudio.ai/).
+2. Find and download a text model in LM Studio, then load it.
+3. Open the **Developer** tab and turn on **Start server**. See [LM Studio's local server guide](https://lmstudio.ai/docs/developer/core/server).
+4. In GSM, choose **LM Studio**, enter the server URL and loaded model ID shown by LM Studio, and enter an API key only if you enabled server authentication.
 
-For privacy or offline use, you can run an OpenAI-compatible server locally. This requires a separate setup using a tool like LM Studio (which I recommend), Ollama, Jan, or KoboldCpp.
+## DeepL (translation only)
 
-1.  In GSM's AI settings, set the `OpenAI API URL` to your local server's address (e.g., `http://localhost:1234/v1`).
-2.  Set the `OpenAI API Key` to any non-empty value (e.g., `lm-studio`).
-3.  For **OCR tasks with a local vision model**, you must configure it separately. Create or edit the file at `C:/Users/{YOUR_USER}/.config/owocr_config.ini` and add a section for your local model:
+DeepL can translate text in GSM, but it does not provide sentence explanations, grammar help, or other text-generation actions.
 
-    ```ini
-    [local_llm_ocr]
-    url = http://localhost:1234/v1/chat/completions
-    model = qwen/qwen3-vl-4b-instruct-gguf
-    keep_warm = True
-    api_key = lm-studio
-    ;prompt = Extract all Japanese Text from Image. Ignore all Furigana...
-    ```
+1. Visit [DeepL for Developers](https://www.deepl.com/pro-api) and sign up for a DeepL API plan. A regular DeepL Translator subscription alone does not provide API access.
+2. In your DeepL account, open **Account → API Keys & Limits**, create a key, and copy it. See [DeepL's API key guide](https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API).
+3. In GSM, choose **DeepL**, paste the key into the DeepL API key field, and set the target language.
 
-</TabItem>
-</Tabs>
+## GSM Cloud
 
-## Pre-written Prompts
+If **GSM Cloud** is available in your build or account, authenticate in **Settings → GSM Cloud** first. Then choose **GSM Cloud** as the AI provider and select the model or models offered to your account. You do not enter a third-party provider key for this option.
 
-GSM uses pre-written prompts to guide the AI. The context for these prompts is built from the last 10 lines of text received by GSM.
+## Use AI in a session
 
-### Translation Prompt
+- In the overlay, use **Translate** for a translation or **Explain** for an explanation of the current line.
+- In the Text Feed, use **Ask AI** or choose a prompt from a line's actions.
+- GSM can include nearby captured dialogue as context. Adjust the context length in **AI and translation → General**.
+- Open **AI and translation → Prompts** to review the built-in prompts or add your own. **Preview prompt** lets you inspect the request before sending it.
 
-This prompt is designed for professional-grade game localization, instructing the AI to provide a natural-sounding translation that preserves the original tone and context.
+### Add AI output to Anki
+
+AI output for Anki is optional and separate from manual Translate and Explain actions.
+
+1. In **AI and translation → General**, enable **Add translation to Anki**.
+2. Choose the **Anki Field** that should receive the output.
+3. Confirm that your selected note type has that field in **Settings → Mining → Anki**.
+
+## Prompt examples
+
+GSM's prompt editor includes presets for translation, sentence breakdown, grammar, vocabulary, nuance, and scene summaries. These examples preserve the original translation and scene-summary prompts; review the current versions in **AI and translation → Prompts** and edit them there if needed.
+
+### Translation
 
 ```text
 **Professional Game Localization Task**
@@ -155,9 +153,7 @@ Translate ONLY the provided line of game dialogue specified below into natural-s
 君の物語は、ここで終わりなのか？
 ```
 
-### Context Summary Prompt
-
-This prompt asks for a brief summary of the current scene based on the dialogue context.
+### Scene summary
 
 ```text
 **Task Directive:**
@@ -169,8 +165,8 @@ Provide a very brief summary of the scene in English based on the provided Japan
 
 ## Troubleshooting
 
--   **OpenAI GPT-5 Models Fail**: Newer OpenAI models (like `gpt-5-nano`) have deprecated the `max_tokens` parameter in favor of `max_completion_tokens`. GSM has been updated to handle this, but ensure you are on the latest version if you encounter errors.
--   **No Translation Appears**:
-    -   Make sure the `Enabled` checkbox for AI features is ticked in GSM's settings.
-    -   Check that your API key and URL are correct.
-    -   Confirm you haven't exceeded the rate limits of your chosen API service.
+- Check that the selected model ID is available to your account and that the provider has not changed or removed it.
+- For hosted services, check the account's key permissions, quota, usage limits, and billing status.
+- For Ollama and LM Studio, confirm the server is running, the model is loaded, and GSM's URL matches the server.
+- If **Translate** works but **Explain** does not, choose a text-generation provider; DeepL supports translation only.
+- If AI output is missing from an Anki card, enable **Add translation to Anki** and confirm the selected note type contains the chosen field.

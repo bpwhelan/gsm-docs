@@ -30,8 +30,9 @@ This guide focuses on hard-subbed content. If you're mining from anime with soft
 
 The basic workflow involves:
 1. Setting up a browser window or video player with your content
-2. Capturing that window using GSM/OBS
-4. Cropping the capture to show only the subtitle area (optional but recommended)
+2. Capturing that window with OBS
+3. Configuring OCR for the subtitle region
+4. Mining lines from the Text Feed
 
 
 ## Step 1: Set Up Your Video Source
@@ -40,10 +41,6 @@ Open your video content in a browser or video player. Common options include:
 
 - **Web Browsers**: Chrome, Edge, Brave, Firefox
 - **Video Players**: VLC, MPC-HC, mpv
-
-:::tip Browser Compatibility
-Some users have reported that Chrome doesn't always appear in GSM's window capture dropdown. If you experience this issue, try using **Edge** or **Brave**, which tend to work more reliably. Alternatively, you can capture Chrome through OBS (see Step 3).
-:::
 
 :::tip Install as App
 For a cleaner experience, consider installing your video site (e.g., BiliBili, Netflix) as a standalone app using your browser's "[Install as App](https://support.google.com/chrome/answer/9658361)" feature. This creates a dedicated window without browser UI clutter.
@@ -57,7 +54,7 @@ Some streaming services use DRM that may prevent screen capture. If you encounte
 
 ### Option A: GSM Window Capture (Recommended)
 
-If you see the browser or video player window in GSM's dropdown, you can capture it directly by selecting it, and pressing "Window Capture".
+Use **Home → select the game → ⋯ → Run Capture Wizard** to test the image and select a capture type for the player window. If it is not available, add a Window Capture source in OBS as described below.
 
 ### Option B: Direct Window Capture (Recommended #2)
 
@@ -107,16 +104,16 @@ Cropping to just the subtitle area:
 
 ## Step 4: OCR
 
-Now you can use GSM's OCR feature to capture the subtitles from your video content just as if it was a Game. Make sure to adjust the OCR area to match the subtitle position in the video. 
+Use the GSM **OCR** tab to capture the subtitles from the video. Choose the scene, open **Open Area Selector**, and draw a normal region around the subtitle position.
 
 :::note No crop?
 The cropped output and what GSM grabs for OCR is different, so don't be alarmed if the OCR config image doesn't match what you see in OBS.
 :::
 
-![GSM OCR Setup](/img/guides/hardsub-ocr-setup.png)
+![Current GSM OCR settings](/img/desktop/ocrframe-en.png)
 
 ## Step 5: Mine
 
-Just like with games, you can now mine the subtitles as they appear in the video, and they will be captured along with audio and screenshots.
+When OCR captures a subtitle, it appears in the Text Feed. Mine from Yomitan as usual; GSM can match the subtitle to the captured audio and screenshot.
 
 Happy mining! 🎬

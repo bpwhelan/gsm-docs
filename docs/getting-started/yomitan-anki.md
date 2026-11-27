@@ -8,7 +8,13 @@ description: Setup guide for Kiku, Lapis, and Senren note types.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Anki/Yomitan Setup
+# Anki and Yomitan Setup
+
+GSM can guide you through installing and mapping the recommended **Lapis**, **Kiku**, or **Senren** note types from **Settings → Mining → Anki → General → Set up recommended Anki cards**. It can create a separate GSM Yomitan profile while keeping your existing profile. Use this page if you want to review the field mappings yourself or set up a template manually.
+
+:::note
+The setup assistant configures the running overlay’s Yomitan profile. For browser Yomitan, use **Copy Yomitan field table** to copy the mapping. The overlay has its own embedded Yomitan and its dictionaries and profiles are separate. Import overlay dictionaries from the overlay's Yomitan settings.
+:::
 
 ## 1. Install AnkiConnect
 
@@ -25,7 +31,7 @@ Open Yomitan settings:
 1. `Anki` -> `Enable Anki Integration`
 2. `Configure Anki Flashcards`
 
-![alt text](image.png)
+In Yomitan, enable Anki integration and open **Configure Anki Flashcards**. Select the note type you installed and verify that its fields are mapped as described below.
 
 ## 3. Setup Anki Note Type
 

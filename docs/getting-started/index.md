@@ -1,74 +1,30 @@
 ---
-title: Getting Started with GSM
-sidebar_label: Overview
+title: Install GSM
+sidebar_label: Install GSM
 sidebar_position: 1
 ---
 
-# Getting Started with GSM
+# Install GameSentenceMiner
 
-Welcome to GameSentenceMiner (GSM)! This guide will help you get up and running quickly.
+Choose the instructions for your operating system. Windows has the broadest feature support; Linux and macOS have platform-specific limitations listed in their guides.
 
-## Quick Start Video
+- [Windows](./windows.md)
+- [Linux](./linux.md)
+- [macOS](./macos.md)
+- [Steam Deck](./deck.md)
 
-If you prefer video tutorials, check out this installation guide:
+## What you need
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sVL9omRbGc4" title="GSM Installation Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- **FFmpeg** on Linux and macOS for card audio and screenshots.
+- **OBS Studio** to capture the game image and audio.
+- **Anki** and the **AnkiConnect** add-on to let GSM enhance cards.
+- **Yomitan** or another lookup tool to make cards from game text. See [Anki and Yomitan setup](./yomitan-anki.md).
+- A game in the language you want to learn. Text hooks and OCR are included as capture options; you can choose between them in the [first-use guide](/docs/how-to-use-gsm).
 
-## What You'll Need
+Once GSM is installed, connect OBS and Anki, then follow [How to Use GSM](/docs/how-to-use-gsm) to capture text, set up the overlay, and make your first enhanced card.
 
-Regardless of your platform, you'll need:
+:::tip
+You do not need to configure every feature before starting. The Home tab's **Add a game** guides you through the first game's capture setup.
+:::
 
-1. **A game** to play and learn from.
-2. **Yomitan (Browser Extension)** for creating cards from text. Take a look here for installation instructions: [Yomitan Getting Started](https://yomitan.wiki/getting-started/)
-3. **[Anki](https://apps.ankiweb.net/)** for creating and reviewing flashcards. Take a look here for some Templates and how to set them up in Yomitan: [Yomitan Anki Templates](./yomitan-anki.md)
-4. **A way to get text into GSM**
-   - [Agent](https://github.com/0xDC00/agent) - [Video Tutorial](https://www.youtube.com/watch?v=fMWJYr_PcRE) - Games/Emulators - List of Supported Games: https://github.com/0xDC00/scripts
-   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - [Video Tutorial](https://www.youtube.com/watch?v=ysZBI2tcxMc) - VNs/Emulators - I use this for VNs rather than textractor, but that's not a recommendation.
-   - [Textractor](https://github.com/Chenx221/Textractor) - [Video Tutorial](https://www.youtube.com/watch?v=sEIYGTEuciA) - VNs
-   - GSM's built-in OCR - Universal Solution
-   - My recommendation for conventional games is to check Agent for a script, and if it doesn't have one, use GSM's OCR.
-   - For VNs, try LunaTranslator/Textractor before trying OCR.
-
-
-## Installing GSM
-
-GSM is available for multiple operating systems. Select your platform below for specific installation instructions:
-
-- **[Windows](/docs/getting-started/windows)** - Full feature support, recommended platform
-- **[macOS](/docs/getting-started/macos)** - Experimental support
-- **[Linux](/docs/getting-started/linux)** - Experimental support
-
-## How GSM Works
-
-Understanding the workflow will help you troubleshoot issues:
-
-1. **Text Event** - A texthooker (Agent, Textractor, OCR) detects text from your game
-2. **Audio Capture** - GSM marks this as the start of a voice line.
-3. **Card Creation** - You look up a word in the text using Yomitan, and create an Anki card.
-4. **Enhancement** - GSM automatically adds the audio, screenshot, and optional AI translation to your card
-
-## Basic Workflow
-
-Once you're set up, here's your typical mining session:
-
-1. Start GSM
-2. Launch OBS if it isn't already running.
-3. Launch your texthooker (if using one)
-4. Start your game
-5. Play normally - when you encounter unknown words:
-   - Look them up using Yomitan on GSM's texthooker page, or the Overlay.
-   - Create an Anki card
-   - GSM automatically enhances it with audio and screenshots
-
-## What's Next?
-
-After installation:
-
-- Set up [AI Features](/docs/features/ai-features) for automatic translations
-- Check [Troubleshooting](/docs/troubleshooting) if you run into issues
-
-## Community & Support
-
-- **Discord**: [Join our community](https://discord.gg/yP8Qse6bb8)
-- **GitHub**: [Report issues or contribute](https://github.com/bpwhelan/GameSentenceMiner)
-- **Videos**: [Watch demos and tutorials](https://www.youtube.com/watch?v=FeFBL7py6HY)
+For problems with installation or first launch, see [Common Problems](/docs/troubleshooting).

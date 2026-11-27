@@ -1,44 +1,47 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'overview',
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Installation',
       collapsed: false,
       items: [
         'getting-started/index',
-        'getting-started/yomitan-anki',
         'getting-started/windows',
         'getting-started/linux',
         'getting-started/macos',
-        'getting-started/deck'
+        'getting-started/deck',
+        'getting-started/yomitan-anki',
       ],
     },
     {
       type: 'category',
-      label: 'Features',
+      label: 'How to Use GSM',
       collapsed: false,
       items: [
-        'features/anki-enhancement',
+        'how-to-use-gsm',
+        'features/text-hook',
         'features/ocr',
         'features/overlay',
+        'features/anki-enhancement',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'More Features',
+      collapsed: true,
+      items: [
+        'features/autolauncher',
+        'features/text-processing',
+        'features/windows-speech-recognition',
+        'features/hachidori',
         'features/overlay-gamepad',
         'features/longplay',
         'features/ai-features',
-        'features/autolauncher',
         'features/game-pausing',
+        'features/stats-and-library',
       ],
     },
     {
@@ -48,7 +51,7 @@ const sidebars: SidebarsConfig = {
         'guides/custom-name-dictionary',
         'guides/mining-hard-subbed-content',
         'guides/incomplete-sentences',
-        'guides/plugins'
+        'guides/plugins',
       ],
     },
     'troubleshooting',

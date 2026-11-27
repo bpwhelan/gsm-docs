@@ -16,34 +16,9 @@ These Instructions are built from testing and chatting with users on various dis
 
 ## 1. Prerequisites (System Packages)
 
-You may need to install several dependencies using your distribution's package manager. The required packages differ slightly between distributions, and may not even be required.
+Install **FFmpeg** from your distribution. On Debian or Ubuntu, run `sudo apt install ffmpeg`. For other distributions, see the [FFmpeg download page](https://ffmpeg.org/download.html). Check that `ffmpeg -version` and `ffprobe -version` both print a version.
 
-#### For Debian / Ubuntu-based Distributions:
-
-```sh
-sudo apt update
-sudo apt install ffmpeg python3-venv python3-pip libfuse2 xclip
-```
-
-#### For Fedora / Nobara / Arch-based Distributions:
-
-Package names may vary. These are common names for Fedora.
-
-```sh
-sudo dnf install ffmpeg python3-devel gcc libevdev-devel xclip
-```
-*(Note: Arch users may need to find equivalent packages in the official repositories or the AUR.)*
-
--   `libfuse2`: Required by the AppImage format on many modern distributions.
--   `xclip`: Used for clipboard-related functionality.
-
-#### For Arch Linux Users:
-
-NEEDS VERIFICATION:
-
-```sh
-sudo pacman -S ffmpeg gcc libevdev xclip fuse2
-```
+If GSM cannot find the tools on its `PATH`, place both executables in the `ffmpeg` subfolder of GSM’s data folder.
 
 ## 2. OBS Studio Configuration
 
@@ -54,7 +29,7 @@ GSM uses OBS Studio for screen capture, which is essential for OCR, screenshots,
 2.  **Configure WebSocket Server**:
     -   In OBS, go to `Tools` -> `WebSocket Server Settings`.
     -   Check `Enable WebSocket Server`.
-    -   **Important**: Uncheck `Enable Authentication`. GSM's connection on Linux/macOS works best with authentication disabled.
+    -   Leave `Enable Authentication` checked and enter the same password in GSM's OBS settings.
     -   Set the `Server Port` to `7274` to match GSM's default.
 
 3.  **Enable Replay Buffer**: This is crucial for creating flashcards with audio and screenshots.
@@ -64,24 +39,22 @@ GSM uses OBS Studio for screen capture, which is essential for OCR, screenshots,
     -   Check `Enable Replay Buffer`.
     -   Set `Maximum Replay Time` to at least `300` seconds.
 
-:::warning[Manual Scene Setup Required]
-The "Setup New Game" and game capture buttons on GSM's Home tab **do not work on Linux**. You must manually create a new Scene in OBS and add a source (e.g., "Screen Capture" for Wayland, or "Window Capture" for X11) to capture your game.
+:::note[Linux capture setup]
+Capture options depend on your distribution, display server, and OBS source. Create an OBS scene and source manually if the capture wizard cannot configure your game or monitor. On Wayland, use an OBS capture source supported by your compositor; PipeWire may be required. The Home tab's capture wizard can still help you test the image and choose text capture.
 :::
 
 ## 3. Anki Configuration
 
 1.  **Install Anki**: Download Anki from the [official website](https://apps.ankiweb.net/).
 2.  **Install AnkiConnect**: In Anki, go to `Tools` > `Add-ons` > `Get Add-ons...` and enter the code: **`2055492159`**.
-3.  **(For Wayland Users)**: Anki may require a specific environment variable to run correctly on Wayland. You may need to launch it from the terminal with:
-    ```sh
-    export ANKI_WAYLAND=1 && anki
-    ```
 
 ## 4. GameSentenceMiner Installation
 
 The recommended method for Linux is using the provided AppImage.
 
-1.  **Download the AppImage**: Go to the [latest GSM release on GitHub](https://github.com/bpwhelan/GameSentenceMiner/releases/latest) and download the `.AppImage` file.
+If your system cannot mount the AppImage because FUSE is unavailable, run it with `APPIMAGE_EXTRACT_AND_RUN=1` set.
+
+1.  **Download the AppImage**: Go to the [GSM release on GitHub](https://github.com/bpwhelan/GameSentenceMiner/releases) and download the `.AppImage` file.
 
 2.  **Make it Executable**: Open a terminal in the directory where you downloaded the file and run:
     ```sh
@@ -92,43 +65,12 @@ The recommended method for Linux is using the provided AppImage.
     ```sh
     ./GameSentenceMiner-*.AppImage
     ```
-    On the first launch, GSM will create a Python virtual environment and install all of its dependencies. This process can take several minutes.
 
-## Troubleshooting & Specific Distributions
+After installation, use [Text Hook Setup](../features/text-hook.md) to connect a supported hook under Wine or Proton, or choose [OCR](../features/ocr.md) for a game without a hook.
 
-### For Fedora 43+ / Distros with Python 3.13+
+## Platform notes
 
-Some distributions ship with very new Python versions that may have compatibility issues with GSM's dependencies. If GSM fails to install or run correctly, you can manually create a compatible Python environment for it using `uv`.
-
-First, install `uv` if you haven't already: `bash <(curl -LsSf https://astral.sh/uv/install.sh)`
-
-Then, run the following commands in your terminal to create a dedicated Python 3.11 environment for GSM:
-
-```sh
-# Remove any previous broken environment
-rm -rf ~/.config/GameSentenceMiner/python_venv
-
-# Create a new environment using Python 3.11
-uv python install 3.11
-uv python pin 3.11
-uv venv ~/.config/GameSentenceMiner/python_venv
-
-# Finalize setup
-~/.config/GameSentenceMiner/python_venv/bin/python3 -m ensurepip
-rm .python-version
-```
-After running these commands, start the GSM AppImage again. It should now use this compatible environment.
-
-## Known Issues & Workarounds
-
--   **OCR Recommendations**: OneOCR is not available on Linux. I recommend using Meiki Text Detector for Stability, and Google Lens as the Main OCR.
-
--   **Game Overlay**: The game overlay feature is not functional on Linux at this time. Use the Texthooker page (`http://localhost:55000/texthooker`) for mining.
-
--   **Global Hotkeys**: Global hotkeys for OCR do not work due to limitations in Python's keyboard libraries on Linux. You must use the buttons within the GSM application to start/stop OCR.
-
--   **Area Selector**: The hotkeys (e.g., `S` to save, `Q` to quit) do not work in the Area Selector. You must use the small on-screen UI panel that appears in the top-left to save or close the selector.
-
--   **Window Focus Stealing**: Some users on Wayland (with GNOME) have reported that if GSM is on a different workspace, it may steal keyboard focus. Keeping GSM on the same workspace as your other applications is the current workaround. A restart of GSM also resolves the issue temporarily.
-
--   **Text Hooking (Agent/Textractor)**: Using text hookers for games running through Wine or Proton is possible but requires manual setup. For example, you may need to run Textractor within the same Wine prefix as your game, which can be managed with tools like Lutris or Bottles. Agent may work out-of-the-box for some native Linux games with available scripts.
+- **OCR engines vary by platform.** OneOCR is Windows-only; use the engine choices available in the current OCR tab and install any requested components there.
+- **Wayland capture depends on the compositor.** GSM and OBS support Wayland capture paths, but some setups may need PipeWire permissions or a manually created OBS source. See [OCR Setup](../features/ocr.md) and [Overlay](../features/overlay.md).
+- **Text hooks are available for compatible Linux, Wine, and Proton games.** Engine and game support vary; see [Text Hook Setup](../features/text-hook.md).
+- **Hotkeys and focus behavior can vary.** If a global shortcut does not fire, use the relevant control in GSM's OCR or Text Hook tab. Some Wayland desktop environments may move focus when switching workspaces.

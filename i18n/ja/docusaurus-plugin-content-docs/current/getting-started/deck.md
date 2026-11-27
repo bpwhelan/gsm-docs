@@ -28,6 +28,10 @@ Steam Deckで最高の体験とGSMの全機能を利用するには、ストリ�
     1. **Steam**ボタンを押します。
     2. **電源** > **デスクトップに切り替え**に移動します。
 
+    #### FFmpegをインストール
+
+    デスクトップモードで[Linux版の手順](./linux.md)に沿ってFFmpegを用意し、`ffmpeg` と `ffprobe` がGSMから使えることを確認します。
+
     #### OBS Studioをインストール
     GSMは、OCR用にゲーム画面をキャプチャするためにOBS Studioを必要とします。
     1. **Discover**ストア（タスクバーのショッピングバッグアイコン）を開きます。
@@ -39,11 +43,9 @@ Steam Deckで最高の体験とGSMの全機能を利用するには、ストリ�
     4. **重要**: **OBS WebSocket**プラグインが有効になっていることを確認してください（最近のバージョンではデフォルトで含まれています）。
     5. OBSで、**ツール** > **WebSocketサーバー設定**に移動します。
     6. **WebSocketサーバーを有効にする**をチェックします。
-    7. **認証を有効にする**のチェックを外します（Deckでは認証なしの方がGSMは最適に動作します）。
-       - または、生成されたパスワードをコピーし、後でGSMのOBS設定に貼り付けます。
+    7. **認証を有効にする**をオンのままにし、生成されたパスワードをGSMのOBS設定に入力します。
     9. **サーバーポート**を`7274`に設定します。
     
-    ![OBS WebSocket Settings](/img/deck/websocket_setting.png)
     
     10. **リプレイバッファの設定**:
        - **設定** > **出力** > **リプレイバッファ**に移動します。
@@ -57,13 +59,13 @@ Steam Deckで最高の体験とGSMの全機能を利用するには、ストリ�
     ![OBS FPS Settings](/img/deck/obs_fps.png) 
 
     #### Ankiをインストール
-    DiscoverストアのAnkiのFlatpakバージョンは、アドオンや権限に問題がある場合があります。公式のLinuxビルドをお勧めします。
+    ここでは公式のLinuxビルドを使います。
 
     1. [Anki公式サイト](https://apps.ankiweb.net/)にアクセスします。
     2. Linuxバージョンをダウンロードします（Download Anki for Linux -> Download .tar.zst）。
     3. ファイルマネージャー（Dolphin）を開き、ダウンロードしたファイルを見つけ、右クリックして**Extract** > **Extract archive here**（ここでアーカイブを展開）を選択します。
     4. 展開されたフォルダを開きます。
-    5. "Anki.sh"をダブルクリックしてAnkiをインストールして実行します。
+    5. [AnkiのLinux版インストールガイド](https://docs.ankiweb.net/manual/platform/linux/installing)に沿って、そのフォルダーからインストールしてAnkiを起動します。
 
     #### Ankiの設定
     1. Ankiを開きます。
@@ -75,98 +77,33 @@ Steam Deckで最高の体験とGSMの全機能を利用するには、ストリ�
 
     Steam DeckにはAppImageバージョンを使用します。
 
-    1. [最新のGSMリリース](https://github.com/bpwhelan/GameSentenceMiner/releases/latest)にアクセスします。
+    1. [GSMのリリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)にアクセスします。
     2. `.AppImage`ファイルをダウンロードします。
     3. ダウンロードしたファイルをダブルクリックして実行します。実行されない場合：
        - ファイルを右クリックし、**プロパティ** > **既定のアクセス権**（Permissions）タブに移動します。
        - **実行可能にする**（Is executable）をチェックします。
        - 閉じて、ファイルを再度ダブルクリックします。
 
-    :::info 初回起動
-    初回起動時、GSMは内部環境をセットアップします。これには数分かかる場合があります。インターネット速度に依存しますが、これは将来のリリースでおそらく改善されるでしょう。
-    :::
+    ### 3. キャプチャとOCRを設定する
 
-    ### 3. OCRのセットアップ
+    OBSとGSMをデスクトップモードで起動し、GSMの**Home → ゲームを選択 → ⋯ → Run Capture Wizard**を実行します。ゲーム画面を確認し、シーンを自動作成できない場合はOBSで手動作成してください。
 
-    OBSシーンとアクティブなキャプチャ設定があれば、OCRは他のプラットフォームと同じくらい簡単です。エリアを設定し、自動OCRを開始するだけで準備完了です。
+    ウィザードで**OCR**を選ぶか、GSMの**OCR**タブを開きます。台詞の範囲を選択し、サンプルスキャンで認識を確認してから設定を保存します。範囲の種類やスキャン操作は[OCRガイド](../features/ocr.md)を参照してください。
 
-    エリアを保存するには、エリア選択ボックスの右クリックメニューに「エリアを保存」オプションがあります。他のタイプのエリア（除外、メニュー）はまだ設定できません（愚かな間違いです）が、将来のリリースで修正される予定です。
+    ### 4. オーバーレイとコントローラーを設定する
 
-    ### 4. コントローラー設定
+    GSMのHomeタブからオーバーレイを起動し、**Overlay Settings**でキャプチャと表示方法を調整します。オーバーレイ内のYomitan辞書は、ブラウザー版Yomitanの辞書とは別にインポートしてください。
 
-    デスクトップモードでのマイニングを快適にするために、必要なキーをSteam Deckのボタンにマッピングする必要があります。
+    コントローラーを接続したら、**Overlay Settings → Controller**で操作を設定します。トラックパッドをポインターとして使うこともできます。[Overlayガイド](../features/overlay.md)と[ゲームパッド操作](../features/overlay-gamepad.md)も参照してください。
 
-    **推奨バインディング:**
-    -   **背面ボタン (L4/L5/R4/R5):** 1つを`右Alt`（**右Altであることが非常に重要です**）に、もう1つを`Tab`にマッピングします。これにより、ゲームとTexthookerをすばやく切り替えることができます。
-    -   **トラックパッド:** 片方のトラックパッドをマウスとして設定し、GSMオーバーレイ（機能する場合）またはウィンドウと対話できるようにします。
+    ### 5. 起動してマイニングする
 
-    ゲーム実行中に**Steam**ボタン > **コントローラー設定**を押すことで、**デスクトップモード**でこれらを設定できます。
+    - OBS、GSM、Ankiを起動します。
+    - ウィザードの最後に、このゲームでOCRを自動起動するか選択します。
+    - 台詞がGSMのText Feedに表示されることを確認します。
+    - オーバーレイで単語を検索し、Ankiカードを作成します。
 
-    ### 4. 推奨設定
-
-    GSMで**設定**に移動し、Deckでのパフォーマンスを向上させるために以下を調整します。GSM設定を開くには、`ホーム`タブにボタンがあります。
-    - VAD設定:
-      - `Whisper Model`: `tiny` 
-      - または `VADモデルを選択`: `Silero`。
-    - 一般設定:
-      - `クリップボード 有効`: `OFF` - リソースを節約します。Linuxのクリップボード互換性はWindowsに比べて良くないため、とにかくWebSocketを使用することをお勧めします。
-    - 機能設定:
-        - `Anki編集を開く`: `OFF` - Deckではかなり気が散ります。
-
-    <details>
-      <summary>📸 完全なインストールスクリーンショット（クリックして展開）</summary>
-
-      以下は、インストールプロセスの各ステップの詳細なスクリーンショットです：
-
-      ![Screenshot 1](/img/deck/dump/Screenshot_20260106_094724.png)
-      ![Screenshot 2](/img/deck/dump/Screenshot_20260106_094806.png)
-      ![Screenshot 3](/img/deck/dump/Screenshot_20260106_094808.png)
-      ![Screenshot 4](/img/deck/dump/Screenshot_20260106_094815.png)
-      ![Screenshot 5](/img/deck/dump/Screenshot_20260106_094916.png)
-      ![Screenshot 6](/img/deck/dump/Screenshot_20260106_094933.png)
-      ![Screenshot 7](/img/deck/dump/Screenshot_20260106_095010.png)
-      ![Screenshot 8](/img/deck/dump/Screenshot_20260106_095217.png)
-      ![Screenshot 9](/img/deck/dump/Screenshot_20260106_095325.png)
-      ![Screenshot 10](/img/deck/dump/Screenshot_20260106_095342.png)
-      ![Screenshot 11](/img/deck/dump/Screenshot_20260106_095349.png)
-      ![Screenshot 12](/img/deck/dump/Screenshot_20260106_095449.png)
-      ![Screenshot 13](/img/deck/dump/Screenshot_20260106_095509.png)
-      ![Screenshot 14](/img/deck/dump/Screenshot_20260106_095512.png)
-      ![Screenshot 15](/img/deck/dump/Screenshot_20260106_095639.png)
-      ![Screenshot 16](/img/deck/dump/Screenshot_20260106_095938.png)
-      ![Screenshot 17](/img/deck/dump/Screenshot_20260106_095950.png)
-      ![Screenshot 18](/img/deck/dump/Screenshot_20260106_100429.png)
-      ![Screenshot 19](/img/deck/dump/Screenshot_20260106_100435.png)
-      ![Screenshot 20](/img/deck/dump/Screenshot_20260106_100913.png)
-      ![Screenshot 21](/img/deck/dump/Screenshot_20260106_101107.png)
-      ![Screenshot 22](/img/deck/dump/Screenshot_20260106_101127.png)
-      ![Screenshot 23](/img/deck/dump/Screenshot_20260106_101206.png)
-      ![Screenshot 24](/img/deck/dump/Screenshot_20260106_101238.png)
-      ![Screenshot 25](/img/deck/dump/Screenshot_20260106_101241.png)
-      ![Screenshot 26](/img/deck/dump/Screenshot_20260106_101253.png)
-      ![Screenshot 27](/img/deck/dump/Screenshot_20260106_101319.png)
-      ![Screenshot 28](/img/deck/dump/Screenshot_20260106_101326.png)
-      ![Screenshot 29](/img/deck/dump/Screenshot_20260106_101331.png)
-      ![Screenshot 30](/img/deck/dump/Screenshot_20260106_101521.png)
-      ![Screenshot 31](/img/deck/dump/Screenshot_20260106_101554.png)
-      ![Screenshot 32](/img/deck/dump/Screenshot_20260106_101609.png)
-      ![Screenshot 33](/img/deck/dump/Screenshot_20260106_101708.png)
-      ![Screenshot 34](/img/deck/dump/Screenshot_20260106_101955.png)
-      ![Screenshot 35](/img/deck/dump/Screenshot_20260106_102044.png)
-      ![Screenshot 36](/img/deck/dump/Screenshot_20260106_102104.png)
-      ![Screenshot 37](/img/deck/dump/Screenshot_20260106_102120.png)
-      ![Screenshot 38](/img/deck/dump/Screenshot_20260106_103050.png)
-      ![Screenshot 39](/img/deck/dump/Screenshot_20260106_103114.png)
-      ![Screenshot 40](/img/deck/dump/Screenshot_20260106_103551.png)
-      ![Screenshot 41](/img/deck/dump/Screenshot_20260106_103559.png)
-      ![Screenshot 42](/img/deck/dump/Screenshot_20260106_104315.png)
-      ![Screenshot 43](/img/deck/dump/Screenshot_20260106_104504.png)
-      ![Screenshot 44](/img/deck/dump/Screenshot_20260106_104511.png)
-      ![Screenshot 45](/img/deck/dump/Screenshot_20260106_104516.png)
-      ![Screenshot 46](/img/deck/dump/Screenshot_20260106_104720.png)
-      ![Screenshot 47](/img/deck/dump/Screenshot_20260106_112227.png)
-
-    </details>
+    Steam Deckの動作はLinuxデスクトップとキャプチャソースに左右されます。Gaming ModeはDesktop Modeより制約が多いため、設定済みPCからのストリーミングが簡単な場合があります。全体の流れは[How to Use GSM](../how-to-use-gsm.md)を参照してください。
 
   </TabItem>
   <TabItem value="streaming" label="PCからのストリーミング">
@@ -197,7 +134,7 @@ Steam Deckで最高の体験とGSMの全機能を利用するには、ストリ�
        
     ### **操作**:
     使いやすくするために、いくつかのコントロールを調整する必要があるかもしれません。私はかなり前に設定したので詳細をすべて覚えているわけではありませんが、いくつかのヒントを紹介します：
-    - 背面ボタン（L4/L5/R4/R5）の1つを`右Alt`にマッピングして、Texthookerにすばやくアクセスできるようにします。
+    - 背面ボタン（L4/L5/R4/R5）の1つを`右Alt`にマッピングして、Text Feedにすばやくアクセスできるようにします。
     - 別の背面ボタンを`Tab`にマッピングして、ウィンドウを切り替えます。
     - 私は右のトラックパッドをマウスとして、左のトラックパッドをスクロールに使用するのが好きです。そして、左トラックパッドのクリックを左マウスボタン、右トラックパッドのクリックを右マウスボタンにマッピングします。
       - これらの設定により、ゲーム中にGSMオーバーレイやAnkiと簡単に対話できます。

@@ -34,6 +34,10 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
     1. Press the **Steam** button.
     2. Go to **Power** > **Switch to Desktop**.
 
+    #### Install FFmpeg
+
+    Install FFmpeg in Desktop Mode using the [Linux instructions](./linux.md). Check that both `ffmpeg` and `ffprobe` are available to GSM.
+
     #### Install OBS Studio
     GSM needs OBS Studio to capture the game screen for OCR.
     1. Open the **Discover** store (shopping bag icon on the taskbar).
@@ -46,11 +50,9 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
     
     1. In OBS, go to **Tools** > **WebSocket Server Settings**.
     2. Check **Enable WebSocket Server**.
-    3. Uncheck **Enable Authentication** (GSM works best without it on Deck).
-       - OR copy the password generated for you, and paste it in OBS Settings in GSM Later.
+    3. Keep **Enable Authentication** checked and enter the generated password in GSM's OBS settings.
     4. Set **Server Port** to `7274`.
     
-    ![OBS WebSocket Settings](/img/deck/websocket_setting.png)
 
     #### Enable Replay Buffer
     
@@ -67,13 +69,13 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
     ![OBS FPS Settings](/img/deck/obs_fps.png) 
 
     #### Install Anki
-    The Flatpak version of Anki on the Discover store can sometimes have issues with add-ons or permissions (I'm not sure if this is true tbh). I just used the official Linux build.
+    I used the official Linux build.
 
     1. Go to the [official Anki website](https://apps.ankiweb.net/).
     2. Download the Linux version (Download Anki for Linux -> Download .tar.zst).
     3. Open your file manager (Dolphin), find the downloaded file, right-click it and choose **Extract** > **Extract archive here**.
     4. Open the extracted folder.
-    5. Double click "Anki.sh" to install and run Anki.
+    5. Install Anki from that folder as described in [Anki’s Linux installation guide](https://docs.ankiweb.net/manual/platform/linux/installing), then start Anki.
 
     #### Configure Anki
     1. Open Anki.
@@ -85,246 +87,33 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
 
     We use the AppImage version for Steam Deck.
 
-    1. Go to the [latest GSM release](https://github.com/bpwhelan/GameSentenceMiner/releases/latest).
+    1. Go to the [GSM release for the version you want](https://github.com/bpwhelan/GameSentenceMiner/releases).
     2. Download the `.AppImage` file.
     3. Double Click the downloaded file to run it. If it doesn't run:
        - Right-click the file, go to **Properties** > **Permissions** tab.
        - Check **Is executable**.
        - Close and double-click the file again.
 
-    :::info First Run
-    On the first launch, GSM will set up its internal environment. This might take a few minutes, depending on internet speed, this can probably be improved in future releases.
-    :::
+    ### 3. Configure Capture and OCR
 
-    ### 3. Setup OCR
+    Start OBS and GSM in Desktop Mode, then use **Home → select the game → ⋯ → Run Capture Wizard** to test the game image. Create an OBS scene manually if the capture wizard cannot make one for your setup.
 
-    With an OBS Scene and active capture setup, OCR should be as simple as it is on other platforms. Just set an area, start auto OCR, and you should be good to go.
+    Choose **OCR** in the wizard or open GSM's **OCR** tab. Select a region around the dialogue, run a sample scan, and save the setup. See [OCR Setup](../features/ocr.md) for the current area selector and scan controls.
 
-    In order to save the area, there is a right click menu on the area selection box with a "Save Area" option. The other types of area (exclusion, menu) can't be set up yet (silly mistake), but will be fixed in future releases.
+    ### 4. Set Up the Overlay and Controller
 
-    ### 4. Controller Configuration
+    Launch the overlay from GSM's Home tab and configure its capture and display options in **Overlay Settings**. Import dictionaries into the overlay's embedded Yomitan; these are separate from browser Yomitan dictionaries.
 
-    To make mining comfortable in Desktop Mode, you should map the necessary keys to your Steam Deck buttons.
+    Connect a controller and configure navigation in **Overlay Settings → Controller**. A trackpad can also be used as a pointer. See [Overlay](../features/overlay.md) and [Overlay Gamepad Navigation](../features/overlay-gamepad.md).
 
-    **Recommended Bindings:**
-    -   **Back Buttons (L4/L5/R4/R5):** Map one to `Right Alt` (**VERY IMPORTANT THAT IT IS RIGHT ALT**) and another to `Tab`. This allows you to quickly switch between your game and Texthooker.
-    -   **Trackpad:** Set one trackpad as a Mouse so you can interact with the GSM overlay (if it works) or window.
+    ### 5. Play and Mine
 
-    You can configure these in **Desktop Mode** by pressing the **Steam** button > **Controller Settings** while the game is running.
+    - Start OBS, GSM, and Anki.
+    - Use the capture wizard's final step to choose whether OCR should start automatically for the game.
+    - Check that dialogue appears in GSM's Text Feed.
+    - Look up a word in the overlay and create an Anki card.
 
-    ### 5. Recommended Settings
-
-    In GSM, go to **Settings** and adjust the following for better performance on the Deck, to open GSM Settings, there is a button in the `Home` tab.
-    - VAD Settings:
-      - `Whisper Model`: `tiny` 
-      - OR `Select VAD Model`: `Silero`.
-    - General Settings:
-      - `Clipboard Enabled`: `OFF` - Saves resources. Linux Clipboard compatibility is not great compared to Windows, and I recommend using websocket anyway.
-    - Features Settings:
-        - `Open Anki Note in Edit View`: `OFF` - It's pretty distracting on Deck.
-
-    ### 6. Put it all together
-
-    - Start GSM, OBS, Anki
-    - Launch your Game
-    - Launch OCR/Texthooker
-    - Play normally, alt tab between game and texthooker as needed for lookups and mining.
-    - Overlay support is experimental on Deck, so may not work correctly.
-
-    <details>
-      <summary>📸 Complete Installation Screenshots (Click to expand)</summary>
-
-    Below is a complete dump of screenshots taken during the installation process on Steam Deck for reference. These map help, but are not step-by-step instructions.
-
-    ![Screenshot 1](/img/deck/dump/Screenshot_20260106_094724.png)
-    
-    ---
-
-    ![Screenshot 2](/img/deck/dump/Screenshot_20260106_094806.png)
-
-    ---
-
-    ![Screenshot 3](/img/deck/dump/Screenshot_20260106_094808.png)
-
-    ---
-
-    ![Screenshot 4](/img/deck/dump/Screenshot_20260106_094815.png)
-
-    ---
-
-    ![Screenshot 5](/img/deck/dump/Screenshot_20260106_094916.png)
-
-    ---
-
-    ![Screenshot 6](/img/deck/dump/Screenshot_20260106_094933.png)
-
-    ---
-
-    ![Screenshot 7](/img/deck/dump/Screenshot_20260106_095010.png)
-
-    ---
-
-    ![Screenshot 8](/img/deck/dump/Screenshot_20260106_095217.png)
-
-    ---
-
-    ![Screenshot 9](/img/deck/dump/Screenshot_20260106_095325.png)
-
-    ---
-
-    ![Screenshot 10](/img/deck/dump/Screenshot_20260106_095342.png)
-
-    ---
-
-    ![Screenshot 11](/img/deck/dump/Screenshot_20260106_095349.png)
-
-    ---
-
-    ![Screenshot 12](/img/deck/dump/Screenshot_20260106_095449.png)
-
-    ---
-
-    ![Screenshot 13](/img/deck/dump/Screenshot_20260106_095509.png)
-
-    ---
-
-    ![Screenshot 14](/img/deck/dump/Screenshot_20260106_095512.png)
-
-    ---
-
-    ![Screenshot 15](/img/deck/dump/Screenshot_20260106_095639.png)
-
-    ---
-
-    ![Screenshot 16](/img/deck/dump/Screenshot_20260106_095938.png)
-
-    ---
-
-    ![Screenshot 17](/img/deck/dump/Screenshot_20260106_095950.png)
-
-    ---
-
-    ![Screenshot 18](/img/deck/dump/Screenshot_20260106_100429.png)
-
-    ---
-
-    ![Screenshot 19](/img/deck/dump/Screenshot_20260106_100435.png)
-
-    ---
-
-    ![Screenshot 20](/img/deck/dump/Screenshot_20260106_100913.png)
-
-    ---
-
-    ![Screenshot 21](/img/deck/dump/Screenshot_20260106_101107.png)
-
-    ---
-
-    ![Screenshot 22](/img/deck/dump/Screenshot_20260106_101127.png)
-
-    ---
-
-    ![Screenshot 23](/img/deck/dump/Screenshot_20260106_101206.png)
-
-    ---
-
-    ![Screenshot 24](/img/deck/dump/Screenshot_20260106_101238.png)
-
-    ---
-
-    ![Screenshot 25](/img/deck/dump/Screenshot_20260106_101241.png)
-
-    ---
-
-    ![Screenshot 26](/img/deck/dump/Screenshot_20260106_101253.png)
-
-    ---
-
-    ![Screenshot 27](/img/deck/dump/Screenshot_20260106_101319.png)
-
-    ---
-
-    ![Screenshot 28](/img/deck/dump/Screenshot_20260106_101326.png)
-
-    ---
-
-    ![Screenshot 29](/img/deck/dump/Screenshot_20260106_101331.png)
-
-    ---
-
-    ![Screenshot 30](/img/deck/dump/Screenshot_20260106_101521.png)
-
-    ---
-
-    ![Screenshot 31](/img/deck/dump/Screenshot_20260106_101554.png)
-
-    ---
-
-    ![Screenshot 32](/img/deck/dump/Screenshot_20260106_101609.png)
-
-    ---
-
-    ![Screenshot 33](/img/deck/dump/Screenshot_20260106_101708.png)
-
-    ---
-
-    ![Screenshot 34](/img/deck/dump/Screenshot_20260106_101955.png)
-
-    ---
-
-    ![Screenshot 35](/img/deck/dump/Screenshot_20260106_102044.png)
-
-    ---
-
-    ![Screenshot 36](/img/deck/dump/Screenshot_20260106_102104.png)
-
-    ---
-
-    ![Screenshot 37](/img/deck/dump/Screenshot_20260106_102120.png)
-
-    ---
-
-    ![Screenshot 38](/img/deck/dump/Screenshot_20260106_103050.png)
-
-    ---
-
-    ![Screenshot 39](/img/deck/dump/Screenshot_20260106_103114.png)
-
-    ---
-
-    ![Screenshot 40](/img/deck/dump/Screenshot_20260106_103551.png)
-
-    ---
-
-    ![Screenshot 41](/img/deck/dump/Screenshot_20260106_103559.png)
-
-    ---
-
-    ![Screenshot 42](/img/deck/dump/Screenshot_20260106_104315.png)
-
-    ---
-
-    ![Screenshot 43](/img/deck/dump/Screenshot_20260106_104504.png)
-
-    ---
-
-    ![Screenshot 44](/img/deck/dump/Screenshot_20260106_104511.png)
-
-    ---
-
-    ![Screenshot 45](/img/deck/dump/Screenshot_20260106_104516.png)
-
-    ---
-
-    ![Screenshot 46](/img/deck/dump/Screenshot_20260106_104720.png)
-
-    ---
-
-    ![Screenshot 47](/img/deck/dump/Screenshot_20260106_112227.png)
-
-
-    </details>
-
+    Steam Deck support depends on the Linux desktop and capture source in use. The Game mode environment is more restrictive than Desktop Mode; streaming from a configured PC is often simpler. Continue with [How to Use GSM](../how-to-use-gsm.md) for the full workflow.
   </TabItem>
   <TabItem value="streaming" label="Streaming from PC">
 
@@ -356,7 +145,7 @@ My personal recommendation on Steam Deck is to use streaming for the best experi
        
     ### **Controls**:
     You might need to adjust some controls for better usability. I set this up a long time ago, so I don't remember all the details, but here are some tips:
-    - Map one of the Back Buttons (L4/L5/R4/R5) to `Right Alt` for quick access to Texthooker.
+    - Map one of the Back Buttons (L4/L5/R4/R5) to `Right Alt` for quick access to Text Feed.
     - Map another Back Button to `Tab` to switch between windows.
     - I prefer using the right trackpad as a mouse, with the left trackpad for scrolling. Then I map the left trackpad click to left mouse button, and the right trackpad click to right mouse button.
       - With these settings, I can easily interact with the GSM overlay or Anki while gaming.
