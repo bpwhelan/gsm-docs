@@ -1,73 +1,22 @@
 ---
-title: GSMを始めよう
-sidebar_label: 概要
+title: GSMのインストール
+sidebar_label: GSMのインストール
 sidebar_position: 1
 ---
 
-# GSMを始めよう
+# GSMをインストールする
 
-GameSentenceMiner（GSM）へようこそ！このガイドは、迅速にセットアップを完了し、利用を開始するのに役立ちます。
+このガイドは新しいデスクトップ版が対象です。[リリース一覧](https://github.com/bpwhelan/GameSentenceMiner/releases)からOSに合うパッケージを選んでください。プレビュー版を試す場合は、そのリリースの **Assets** を開きます。
 
-## クイックスタートビデオ
+- [Windows版とGSMが管理するOBS](./windows.md)
+- [Linux版のAppImageとOBS](./linux.md)
+- [macOS版と画面収録](./macos.md)
+- [Steam Deck本体での実行とPCからの配信](./deck.md)
 
-以下のインストールチュートリアルを参照すると、セットアップ手順を実際に確認できます：
+## 初回起動
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sVL9omRbGc4" title="GSM Installation Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+表示言語と学習言語を選びます。**辞書**でYomitanかHachidoriを選び、学習言語の辞書が提示されたらインストールします。日本語の場合は、振り仮名や単語選択に使うSudachi辞書も設定できます。
 
-## 必要なもの
+![表示言語と学習言語を選ぶGSMの初期設定画面](/img/desktop/setup-ja.png)
 
-プラットフォームに関わらず、以下のものが必要です：
-
-1. **ゲーム** をプレイするためのゲーム
-2. **Yomitan（ブラウザ拡張）** - テキストからカードを作成します。インストール手順は次を参照してください: [Yomitan Getting Started](https://yomitan.wiki/getting-started/)
-3. **[Anki](https://apps.ankiweb.net/)** - フラッシュカードの作成と復習に使用します。Yomitanのテンプレートや設定については、`yomitan-anki.md`を参照してください。
-4. **GSMへテキストを取り込む方法**（いずれか）
-   - [Agent](https://github.com/0xDC00/agent) - [Video Tutorial](https://www.youtube.com/watch?v=fMWJYr_PcRE)
-   - [LunaTranslator](https://github.com/HIllya51/LunaTranslator) - [Video Tutorial](https://www.youtube.com/watch?v=ysZBI2tcxMc)
-   - [Textractor](https://github.com/Artikash/Textractor) - [Video Tutorial](https://www.youtube.com/watch?v=sEIYGTEuciA)
-   - GSMの組み込みOCR
-
-## GSMのインストール（簡易）
-
-GSMは複数のオペレーティングシステムで利用できます。特定のインストール手順については、プラットフォーム別のページを参照してください：
-
-- **[Windows](/docs/getting-started/windows)** - 全機能サポート、推奨プラットフォーム
-- **[macOS](/docs/getting-started/macos)** - 実験的サポート
-- **[Linux](/docs/getting-started/linux)** - 実験的サポート
-
-## GSMの仕組み
-
-ワークフローを理解することは、問題のトラブルシューティングに役立ちます：
-
-1. **テキストイベント** - テキストフッカー（Agent, Textractor, OCR）がゲームからテキストを検出します
-2. **音声キャプチャ** - GSMはこれをボイスラインの開始としてマークし、監視を開始します
-3. **音声検出** - 音声が終了すると（VADによって検出）、GSMはオーディオクリップを保存します
-4. **スクリーンショット** - テキストイベントの瞬間にOBSからスクリーンショットがキャプチャされます
-5. **カード作成** - Yomitanを使用してテキスト内の単語を検索し、Ankiカードを作成します
-6. **強化** - GSMは音声、スクリーンショット、およびオプションのAI翻訳をカードに自動的に追加します
-
-## 基本的なワークフロー
-
-セットアップが完了したら、これが典型的なマイニングセッションです：
-
-1. OBSを起動し、ゲームキャプチャシーンを設定します
-2. GSMを開始します
-3. テキストフッカーを起動します（使用している場合）
-4. ゲームを開始します
-5. 通常通りプレイし、未知の単語に遭遇した場合：
-   - GSMのテキストフッカーページでYomitanを使用して検索します
-   - Ankiカードを作成します
-   - GSMは音声とスクリーンショットで自動的に強化します
-
-## 次のステップ
-
-インストール後：
-
-- 自動翻訳のために[AI機能](/docs/features/ai-features)を設定します
-- 問題が発生した場合は[トラブルシューティング](/docs/troubleshooting)を確認します
-
-## コミュニティとサポート
-
-- **Discord**: [コミュニティに参加](https://discord.gg/yP8Qse6bb8)
-- **GitHub**: [問題を報告または貢献する](https://github.com/bpwhelan/GameSentenceMiner)
-- **ビデオ**: [デモとチュートリアルを見る](https://www.youtube.com/watch?v=FeFBL7py6HY)
+ゲームを起動して台詞を表示し、**ゲームを追加**からキャプチャのプレビューを確認します。初期設定は途中で閉じても、設定の一般タブから再開できます。次は[最初のテキスト取得](../how-to-use-gsm.md)に進みます。カードを作りたい場合は[Ankiも接続](./yomitan-anki.md)してください。

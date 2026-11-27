@@ -1,196 +1,22 @@
 ---
-title: What is GameSentenceMiner?
+title: "GameSentenceMiner"
 sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# What is GameSentenceMiner?
+# GameSentenceMiner
 
-<!-- <div align="left">
+GameSentenceMiner (GSM) captures dialogue while you play. You can read each line in the text feed, look up a word over the game, and save an Anki card with the sentence, audio and screenshot from that moment.
 
-[![Github All Releases](https://img.shields.io/github/downloads/bpwhelan/GameSentenceMiner/total.svg)](https://github.com/bpwhelan/GameSentenceMiner/releases)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/gamesentenceminer?label=pip)](https://pypi.org/project/gamesentenceminer/)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/bpwhelan)](https://github.com/sponsors/bpwhelan)
-[![Ko-Fi](https://img.shields.io/badge/donate-ko--fi-ed6760?label=donate)](https://ko-fi.com/beangate)
-[![GitHub License](https://img.shields.io/github/license/bpwhelan/GameSentenceMiner)](https://github.com/bpwhelan/GameSentenceMiner?tab=GPL-3.0-1-ov-file)
-[![Discord](https://img.shields.io/discord/1286409772383342664?color=%237785cc)](https://discord.gg/yP8Qse6bb8)
+## Start with one game
 
-</div> -->
+1. [Install the desktop app](./getting-started/index.md) and choose a dictionary in the setup guide.
+2. [Add a game and capture a line](./how-to-use-gsm.md). Use a [text hook](./features/text-hook.md) when one reads the game's dialogue, or use [OCR](./features/ocr.md) for visible text. For spoken lines without subtitles, there is also experimental [Windows speech recognition](./features/windows-speech-recognition.md).
+3. [Look up a word in the overlay](./features/overlay.md). You can read and track progress without Anki.
+4. When you want to mine, [connect Anki](./getting-started/yomitan-anki.md) and [check your first enhanced card](./features/anki-enhancement.md).
 
-GameSentenceMiner is a powerful application designed to supercharge your language learning through video games and visual novels. By automatically capturing context-rich materials from your gaming sessions, GSM transforms every game into an immersive language learning experience.
+## Continue a session
 
-:::tip Quick Links
-- **Short Demo**: [Watch this first](https://www.youtube.com/watch?v=FeFBL7py6HY)
-- **Installation Guide**: [Full video tutorial](https://www.youtube.com/watch?v=sVL9omRbGc4)
-- **Discord Community**: [Join us](https://discord.gg/yP8Qse6bb8)
-:::
+Use [Game Automation](./features/autolauncher.md) to restore the right capture method when switching games. [Text Processing](./features/text-processing.md) cleans up recurring artifacts and [Longplay](./features/longplay.md) records the dialogue as subtitles. Review past sessions and goals under [Stats and Library](./features/stats-and-library.md).
 
-## Core Features
-
-### Anki Card Enhancement
-
-GSM significantly enhances your Anki cards with rich contextual information:
-
-* **Voice Audio**: Automatically records the voice line associated with the text.
-
-* **Screenshot**: Captures a screenshot of the game at the moment the voice line is spoken.
-
-* **Multi-Line**: It's possible to capture multiple lines at once with sentence audio with GSM's very own Texthooker.
-
-* **AI Translation**: Integrates AI to provide quick translations of the captured sentence. Custom Prompts also supported. (Optional, Bring your own Key)
-
-
-#### Game Example (Has Audio)
-
-<video controls width="100%">
-  <source src="https://github.com/user-attachments/assets/df6bc38e-d74d-423e-b270-8a82eec2394c" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
----
-
-#### VN Example (Has Audio)
-
-<video controls width="100%">
-  <source src="https://github.com/user-attachments/assets/ee670fda-1a8b-4dec-b9e6-072264155c6e" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
----
-
-### OCR
-
-GSM runs a fork of [OwOCR](https://github.com/AuroraWright/owocr/) to provide accurate text capture from games that do not have a hook. Here are some improvements GSM makes on stock OwOCR:
-
-* **Easier Setup**: With GSM's managed Python install, setup is only a matter of clicking a few buttons.
-
-* **Exclusion Zones**: Instead of choosing an area to OCR, you can choose an area to exclude from OCR. Useful if you have a static interface in your game and text appears randomly throughout.
-
-* **Two-Pass OCR**: To cut down on API calls and keep output clean, GSM features a "Two-Pass" OCR System. A Local OCR will be constantly running, and when the text on screen stabilizes, it will run a second, more accurate scan that gets sent to clipboard/WebSocket.
-
-* **Consistent Audio Timing**: With the two-pass system, we can still get accurate audio recorded and into Anki without the use of crazy offsets or hacks.
-
-* **More Language Support**: Stock OwOCR is hard-coded to Japanese, while in GSM you can use a variety of languages.
-
-
-<video controls width="100%">
-  <source src="https://github.com/user-attachments/assets/07240472-831a-40e6-be22-c64b880b0d66" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
----
-
-### Overlay
-
-GSM also features an overlay that allows for on-screen yomitan lookups. Whenever the overlay is on it will scan the screen ONCE whenever a text event from any source comes into GSM. It then allows for hovering over the actual characters in-game for yomitan lookups, and mining.
-
-https://youtu.be/m1MweBsHbwI
-
-![l0qGasWkoH](https://github.com/user-attachments/assets/c8374705-efa0-497b-b979-113fae8a1e31)
-
-<!--### Game Launcher Capabilities (WIP)
-
-This is probably the feature I care least about, but if you are lazy like me, you may find this helpful.
-
-* **Launch**:  GSM can launch your games directly, simplifying the setup process.
-
-* **Hook**:  Streamlines the process of hooking your games (Agent).
-
-This feature simplifies the process of launching games and (potentially) hooking them, making the entire workflow more efficient.
-
-<img width="2560" height="1392" alt="GameSentenceMiner_1zuov0R9xK" src="https://github.com/user-attachments/assets/205769bb-3dd2-493b-9383-2d6e2ca05c2d" />-->
----
-
-### Stats
-
-GSM has a statistics page with currently **32 graphs** chock full of pretty data.
-
-![stats](/img/overview2.png)
-
-The stats are not just pretty.
-
-They are designed to help you grow.
-
-Set goals and see exactly what daily tasks you need to do to achieve them:
-
-![stats](/img/goals2.png)
-
-See all the Kanji you've read in whatever order you want:
-
-![stats](/img/kanji_grid2.png)
-
-And click on them to see every sentence you've read with that Kanji:
-
-![stats](/img/search2.png)
-
-Use Anki? Find Kanji you read a lot but aren't in Anki yet
-
-![stats](/img/anki2.png)
-
-Clean up your data, anyway you want with advanced tools.
-
-![stats](/img/db_management2.png)
-
-These statistics aren't just meant to look pretty, they are meant to help you answer questions:
-* What can I play to maximise both fun and learning?
-* Do I read better in the evening, or in the mornings?
-* Am I progressing in this language?
-* How long should I immerse to reach my goals?
-
-## Basic Requirements
-
-To get started with GSM, you'll need:
-
-* **An Anki card creation tool**: [Yomitan](https://github.com/yomidevs/yomitan) (recommended), [JL](https://github.com/rampaa/JL), etc.
-* **A text extraction method**: [Agent](https://github.com/0xDC00/agent), [Textractor](https://github.com/Artikash/Textractor), [LunaTranslator](https://github.com/HIllya51/LunaTranslator), or GSM's built-in OCR
-* **A game** in your target language
-* **OBS Studio** - For audio and screenshot capture
-* **Anki** - For creating and reviewing flashcards
-
-## Getting Started
-
-Ready to begin? Head over to our [Getting Started Guide](/docs/getting-started) for detailed installation instructions for your platform.
-
-## How GSM Works
-
-GSM works by coordinating multiple tools to create rich, context-aware flashcards:
-
-1. **Text Event Detection**: A texthooker (Agent, Textractor, OCR) captures text from your game, marking the beginning of a voice line
-2. **Audio Capture**: GSM uses Voice Activity Detection (VAD) to automatically detect when speech begins and ends
-3. **Screenshot Capture**: At the moment of the text event, GSM saves a screenshot from OBS
-4. **Card Enhancement**: When you create an Anki card via Yomitan, GSM automatically adds the audio clip and screenshot
-
-This process relies on accurately timed text events to capture corresponding audio. GSM provides extensive settings to accommodate various games and text sources, ensuring consistent results across different setups.
-
-## Support & Community
-
-If you encounter issues or have questions:
-
-* **Join our [Discord server](https://discord.gg/yP8Qse6bb8)** for real-time help
-* **Check the [Troubleshooting Guide](/docs/troubleshooting)** for common issues
-* **Open an issue on [GitHub](https://github.com/bpwhelan/GameSentenceMiner/issues)** for bug reports
-
-## Acknowledgements
-
-* [OwOCR](https://github.com/AuroraWright/owocr) for their outstanding OCR implementation, which I've integrated into GSM.
-
-* [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) for the idea of installing Python within an Electron app.
-
-* [OBS](https://obsproject.com/) and [FFMPEG](https://ffmpeg.org/), without which GSM would not be possible.
-
-* [Renji's Texthooker](https://github.com/Renji-XD/texthooker-ui)
-
-* https://github.com/Saplling/transparent-texthooker-overlay
-
-* [exSTATic](https://github.com/KamWithK/exSTATic) for inspiration for GSM's Stats.
-
-* [Kanji Grid](https://github.com/Kuuuube/kanjigrid)
-
-* [Jiten.moe](https://jiten.moe) for metadata
-
-* [MeikiOCR](https://github.com/rtr46/meikiocr) by [rtr46](https://github.com/rtr46). Make sure to check out his cool project [Meikipop](https://github.com/rtr46/meikipop) if you need something simpler than GSM Overlay.
-
-## Donations
-
-If you've found this or any of my other projects helpful, please consider supporting my work through [GitHub Sponsors](https://github.com/sponsors/bpwhelan), or [Ko-fi](https://ko-fi.com/beangate).
-
+If a step fails, follow the [capture and card checks](./troubleshooting.md). You can also ask in the [GSM Discord](https://discord.gg/yP8Qse6bb8) or [report an issue](https://github.com/bpwhelan/GameSentenceMiner/issues).
